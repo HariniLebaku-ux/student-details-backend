@@ -1,13 +1,14 @@
 
-# Student Details – Spring Boot (Java 8) with Gradle, JaCoCo & SonarQube
+# Student Details – Spring Boot (Java 17) with Gradle, JaCoCo & SonarQube
 
 Minimal Spring Boot service to manage students, configured with:
-- Java 8
+- Java 17
 - Spring Boot 2.7.18
 - Gradle build
 - JaCoCo test coverage
 - SonarQube analysis
 - H2 in-memory DB (for instant run & tests)
+- PostgreSQL DB
 
 ## Run locally
 ```bash

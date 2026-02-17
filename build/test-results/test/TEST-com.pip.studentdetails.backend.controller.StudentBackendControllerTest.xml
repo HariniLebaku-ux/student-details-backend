@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.pip.studentdetails.backend.controller.StudentBackendControllerTest" tests="18" skipped="0" failures="0" errors="0" timestamp="2026-02-17T16:41:32" hostname="BDC6-L-141HVWQ" time="1.402">
+  <properties/>
+  <testcase name="callToBackend_success()" classname="com.pip.studentdetails.backend.controller.StudentBackendControllerTest" time="0.477"/>
+  <testcase name="getDepartmentWisePassPercentageDetailsSuccess()" classname="com.pip.studentdetails.backend.controller.StudentBackendControllerTest" time="0.11"/>
+  <testcase name="callToBackend_wrongMethod_returnsMethodNotAllowed()" classname="com.pip.studentdetails.backend.controller.StudentBackendControllerTest" time="0.015"/>
+  <testcase name="createStudentDetailsInternalServerErrorFailure()" classname="com.pip.studentdetails.backend.controller.StudentBackendControllerTest" time="0.477"/>
+  <testcase name="createStudentValidationFailure()" classname="com.pip.studentdetails.backend.controller.StudentBackendControllerTest" time="0.075"/>
+  <testcase name="createStudentInternalServerErrorFailure()" classname="com.pip.studentdetails.backend.controller.StudentBackendControllerTest" time="0.012"/>
+  <testcase name="getDepartmentWiseRankingDetailsSuccess()" classname="com.pip.studentdetails.backend.controller.StudentBackendControllerTest" time="0.039"/>
+  <testcase name="getDepartmentTopperDetailsException()" classname="com.pip.studentdetails.backend.controller.StudentBackendControllerTest" time="0.012"/>
+  <testcase name="createStudentDetailsSuccess()" classname="com.pip.studentdetails.backend.controller.StudentBackendControllerTest" time="0.011"/>
+  <testcase name="getDepartmentWisePassPercentageDetailsException()" classname="com.pip.studentdetails.backend.controller.StudentBackendControllerTest" time="0.01"/>
+  <testcase name="getDepartmentTopperDetailsSuccess()" classname="com.pip.studentdetails.backend.controller.StudentBackendControllerTest" time="0.023"/>
+  <testcase name="createStudentSuccess()" classname="com.pip.studentdetails.backend.controller.StudentBackendControllerTest" time="0.011"/>
+  <testcase name="getDepartmentWiseRankingDetailsFailure()" classname="com.pip.studentdetails.backend.controller.StudentBackendControllerTest" time="0.026"/>
+  <testcase name="createStudentDetailsDataIntegrityViolationFailure()" classname="com.pip.studentdetails.backend.controller.StudentBackendControllerTest" time="0.011"/>
+  <testcase name="createStudentDetailsValidationFailure()" classname="com.pip.studentdetails.backend.controller.StudentBackendControllerTest" time="0.016"/>
+  <testcase name="getDepartmentTopperDetailsFailure()" classname="com.pip.studentdetails.backend.controller.StudentBackendControllerTest" time="0.008"/>
+  <testcase name="getDepartmentWiseRankingDetailsException()" classname="com.pip.studentdetails.backend.controller.StudentBackendControllerTest" time="0.013"/>
+  <testcase name="createStudentDataIntegrityViolationFailure()" classname="com.pip.studentdetails.backend.controller.StudentBackendControllerTest" time="0.011"/>
+  <system-out><![CDATA[2026-02-17 22:11:30.079  INFO 26044 --- [    Test worker] .b.t.a.w.s.WebMvcTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.pip.studentdetails.backend.controller.StudentBackendControllerTest], using SpringBootContextLoader
+2026-02-17 22:11:30.081  INFO 26044 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.pip.studentdetails.backend.controller.StudentBackendControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2026-02-17 22:11:30.081  INFO 26044 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.pip.studentdetails.backend.controller.StudentBackendControllerTest]: StudentBackendControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-02-17 22:11:30.167  INFO 26044 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.pip.studentdetails.backend.StudentBackendApplication for test class com.pip.studentdetails.backend.controller.StudentBackendControllerTest
+2026-02-17 22:11:30.168  INFO 26044 --- [    Test worker] .b.t.a.w.s.WebMvcTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2026-02-17 22:11:30.168  INFO 26044 --- [    Test worker] .b.t.a.w.s.WebMvcTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@38f96672, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@6c2b5639, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@278f591a, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@67d8431d, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@14616362, org.springframework.test.context.support.DirtiesContextTestExecutionListener@224d7549, org.springframework.test.context.transaction.TransactionalTestExecutionListener@7fd7bf93, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@5a32cbdf, org.springframework.test.context.event.EventPublishingTestExecutionListener@45d7d988, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@c790b46, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@4e10067d, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@2305053, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@79d0d204, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@3d37d543, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@73da1f76]
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::               (v2.7.18)
+
+2026-02-17 22:11:30.241  INFO 26044 --- [    Test worker] c.p.s.b.c.StudentBackendControllerTest   : Starting StudentBackendControllerTest using Java 17.0.12 on bdc6-l-141hvwq with PID 26044 (started by harini.lebaku in C:\Users\harini.lebaku\Downloads\Harini\Harini\Project internal\student-details-backend)
+2026-02-17 22:11:30.242  INFO 26044 --- [    Test worker] c.p.s.b.c.StudentBackendControllerTest   : No active profile set, falling back to 1 default profile: "default"
+2026-02-17 22:11:32.175  INFO 26044 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-02-17 22:11:32.176  INFO 26044 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-02-17 22:11:32.178  INFO 26044 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2026-02-17 22:11:32.219  INFO 26044 --- [    Test worker] c.p.s.b.c.StudentBackendControllerTest   : Started StudentBackendControllerTest in 2.045 seconds (JVM running for 29.828)
+2026-02-17 22:11:32.838  WARN 26044 --- [    Test worker] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

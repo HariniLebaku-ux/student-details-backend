@@ -1,0 +1,76 @@
+
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.7.18'
+    id 'io.spring.dependency-management' version '1.1.4'
+    id 'jacoco'
+    id 'org.sonarqube' version '3.5.0.2730'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    implementation 'org.postgresql:postgresql'
+    // Embedded DB for quick start & tests
+    runtimeOnly 'com.h2database:h2'
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+bootJar {
+    archiveFileName = 'student-details-backend.jar'
+}
+
+
+test {
+    useJUnitPlatform()
+    finalizedBy jacocoTestReport
+}
+
+jacoco {
+    toolVersion = '0.8.11'
+}
+
+jacocoTestReport {
+    dependsOn test
+    reports {
+        xml.required.set(true)
+        html.required.set(true)
+        csv.required.set(false)
+    }
+}
+
+jacocoTestCoverageVerification {
+    violationRules {
+        rule {
+            limit {
+                minimum = 0.80
+            }
+        }
+    }
+}
+
+sonar {
+    properties {
+        property 'sonar.projectKey', 'student-details-backend'
+        property 'sonar.projectName', 'student-details-backend'
+        property 'sonar.host.url', 'http://localhost:9000'
+        property "sonar.login", 'sqp_9b62e709901739eb9d056af7d93207ade245f4ae'
+        property 'sonar.java.coveragePlugin', 'jacoco'
+        property 'sonar.junit.reportPaths', file("${buildDir}/test-results/test").absolutePath
+        property 'sonar.coverage.jacoco.xmlReportPaths', file("${buildDir}/reports/jacoco/test/jacocoTestReport.xml").absolutePath
+        property "sonar.exclusions", """**/com/pip/studentdetails/backend/entity/**, **/com/pip/studentdetails/backend/request/**, **/com/pip/studentdetails/backend/constants/**, **/com/pip/studentdetails/backend/response/**""".trim()
+    }
+}

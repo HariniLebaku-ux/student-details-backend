@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>StudentQueryconstant.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">studentdetails</a> &gt; <a href="index.source.html" class="el_package">com.pip.studentdetails.backend.constants</a> &gt; <span class="el_source">StudentQueryconstant.java</span></div><h1>StudentQueryconstant.java</h1><pre class="source lang-java linenums">package com.pip.studentdetails.backend.constants;
+
+/** This class holds SQL query constants used by the backend repositories.*/
+<span class="nc" id="L4">public class StudentQueryconstant {</span>
+
+    /**
+     * SQL query for inserting a record into the student table.
+     * This query is used in StudentRepository.insertStudent().
+     */
+    public static final String INSERT_STUDENT_QUERY=&quot;&quot;&quot;
+        INSERT INTO student(student_id, student_name, department_id, section) 
+        VALUES (:student_id,:student_name, :department_id, :section_id )&quot;&quot;&quot;;
+
+    /**
+     * SQL query for inserting a record into the student_details table.
+     * This query is used in StudentDetailsRepository.insertStudentDetails().
+     */
+    public static final String INSERT_STUDENT_DETAIL_QUERY=&quot;&quot;&quot;
+        INSERT INTO student_details(student_id, subject_id, marks)
+        VALUES (:student_id, :subject_id, :marks)&quot;&quot;&quot;;
+
+	/**
+	 * SQL query for getting a record into the student table.
+	 * This query is used in StudentRepository.fetchStudentMarksForTopper().
+	 */
+    public static final String DEPARTMENT_TOPPER_QUERY=&quot;&quot;&quot;
+    select  st.student_id as student_id, st.student_name as student_name,
+	    sub.semester_id as semester_id, sub.subject_id as subject_id,
+        sd.marks as marks, d.department_name as department_name
+	from student_core.student st JOIN student_core.student_details sd
+		ON st.student_id = sd.student_id JOIN student_core.subject sub
+		ON sd.subject_id = sub.subject_id JOIN student_core.department d
+		ON st.department_id = d.department_id WHERE st.department_id=:departmentId&quot;&quot;&quot;;
+
+	/**
+	 * SQL query for getting a record into the student table.
+	 * This query is used in StudentRepository.fetchStudentMarksForRanking().
+	 */
+    public static final String DEPARTMENT_RANKING_QUERY=&quot;&quot;&quot;
+    select  st.student_id as student_id, st.student_name as student_name,
+		st.section as section, sub.semester_id as semester_id,
+		sub.subject_id as subject_id, sd.marks as marks, 
+		d.department_name as department_name
+	from student_core.student st JOIN student_core.student_details sd
+		ON st.student_id = sd.student_id JOIN student_core.subject sub
+		ON sd.subject_id = sub.subject_id JOIN student_core.department d
+		ON st.department_id = d.department_id WHERE st.department_id=:departmentId&quot;&quot;&quot;;
+
+	/**
+	 * SQL query for getting a record into the student table.
+	 * This query is used in StudentRepository.fetchDetailsForPassPercentage().
+	 */
+	public static final String DEPARTMENT_WISE_PASS_PERCENTAGE_QUERY= &quot;&quot;&quot;
+	select 	d.department_name as department_name, sub.semester_id as semester_id, 
+		sub.subject_id as subject_id, sub.subject_name as subject_name, 
+		st.section as section, sd.marks as marks
+	from student_core.student st JOIN student_core.student_details sd
+		ON st.student_id = sd.student_id JOIN student_core.subject sub
+		ON sd.subject_id = sub.subject_id JOIN student_core.department d
+		ON st.department_id = d.department_id&quot;&quot;&quot;;
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

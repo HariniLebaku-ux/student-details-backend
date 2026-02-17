@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>GlobalExceptionHandler.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">studentdetails</a> &gt; <a href="index.source.html" class="el_package">com.pip.studentdetails.backend.exception</a> &gt; <span class="el_source">GlobalExceptionHandler.java</span></div><h1>GlobalExceptionHandler.java</h1><pre class="source lang-java linenums">package com.pip.studentdetails.backend.exception;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.pip.studentdetails.backend.response.ApiResponse;
+import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.MethodArgumentNotValidException;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
+
+import javax.validation.ConstraintViolationException;
+
+/**
+ * Global exception handler for the entire application.
+ * Each method in this class handles a specific exception type
+ * and returns a custom ApiResponse with appropriate status codes.
+ */
+@RestControllerAdvice
+<span class="fc" id="L20">public class GlobalExceptionHandler {</span>
+
+    /**
+     * Handles database constraint violations such as:
+     * Duplicate keys, Foreign key violations,Not-null constraint violations
+     * Triggered when the database throws DataIntegrityViolationException.
+     * @param ex The thrown DataIntegrityViolationException
+     * @return A ResponseEntity containing standardized error response
+     */
+    @ExceptionHandler(DataIntegrityViolationException.class)
+    public ResponseEntity&lt;ApiResponse&lt;Void&gt;&gt; handleDataIntegrityViolation(DataIntegrityViolationException ex) {
+<span class="fc" id="L31">        String msg=&quot;Invalid Data&quot;;</span>
+
+<span class="fc" id="L33">        ApiResponse&lt;Void&gt; response = new ApiResponse&lt;&gt;(</span>
+<span class="fc" id="L34">            HttpStatus.BAD_REQUEST.value(),</span>
+            msg
+        );
+
+<span class="fc" id="L38">        return ResponseEntity</span>
+<span class="fc" id="L39">                .status(HttpStatus.BAD_REQUEST)</span>
+<span class="fc" id="L40">                .body(response);</span>
+    }
+
+    /**
+     * Handles validation failures triggered by @Valid or @Validated,
+     * such as @NotBlank, @NotNull, @Size violations.
+     * MethodArgumentNotValidException is thrown by Spring when request
+     * body validation fails.
+     * @param ex The thrown MethodArgumentNotValidException
+     * @return A ResponseEntity containing standardized error response
+     */
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    public ResponseEntity&lt;ApiResponse&lt;Void&gt;&gt; handleMethodArgumentViolation(MethodArgumentNotValidException ex) {
+<span class="fc" id="L53">        String msg=&quot;Invalid Data&quot;;</span>
+
+<span class="fc" id="L55">        ApiResponse&lt;Void&gt; response = new ApiResponse&lt;&gt;(</span>
+<span class="fc" id="L56">            HttpStatus.BAD_REQUEST.value(),</span>
+            msg
+        );
+
+<span class="fc" id="L60">        return ResponseEntity</span>
+<span class="fc" id="L61">                .status(HttpStatus.BAD_REQUEST)</span>
+<span class="fc" id="L62">                .body(response);</span>
+    }
+
+    @ExceptionHandler(JsonProcessingException.class)
+    public ResponseEntity&lt;ApiResponse&lt;Void&gt;&gt; handleJsonProcessingException(JsonProcessingException ex) {
+<span class="fc" id="L67">        String msg=&quot;Error while processing Json record&quot;;</span>
+
+<span class="fc" id="L69">        ApiResponse&lt;Void&gt; response = new ApiResponse&lt;&gt;(</span>
+<span class="fc" id="L70">                HttpStatus.INTERNAL_SERVER_ERROR.value(),</span>
+                msg
+        );
+<span class="fc" id="L73">        return ResponseEntity</span>
+<span class="fc" id="L74">                .status(HttpStatus.INTERNAL_SERVER_ERROR)</span>
+<span class="fc" id="L75">                .body(response);</span>
+    }
+
+    @ExceptionHandler(RuntimeException.class)
+    public ResponseEntity&lt;ApiResponse&lt;Void&gt;&gt; handleRuntimeException(RuntimeException ex) {
+<span class="fc" id="L80">        String msg=&quot;Error while processing input request&quot;;</span>
+
+<span class="fc" id="L82">        ApiResponse&lt;Void&gt; response = new ApiResponse&lt;&gt;(</span>
+<span class="fc" id="L83">                HttpStatus.INTERNAL_SERVER_ERROR.value(),</span>
+                msg
+        );
+<span class="fc" id="L86">        return ResponseEntity</span>
+<span class="fc" id="L87">                .status(HttpStatus.INTERNAL_SERVER_ERROR)</span>
+<span class="fc" id="L88">                .body(response);</span>
+    }
+
+    @ExceptionHandler(ConstraintViolationException.class)
+    public ResponseEntity&lt;ApiResponse&lt;Void&gt;&gt; handleConstraintViolationException(ConstraintViolationException ex) {
+<span class="fc" id="L93">        String msg=&quot;Invalid DepartmentId&quot;;</span>
+
+<span class="fc" id="L95">        ApiResponse&lt;Void&gt; response = new ApiResponse&lt;&gt;(</span>
+<span class="fc" id="L96">                HttpStatus.BAD_REQUEST.value(),</span>
+                msg
+        );
+<span class="fc" id="L99">        return ResponseEntity</span>
+<span class="fc" id="L100">                .status(HttpStatus.BAD_REQUEST)</span>
+<span class="fc" id="L101">                .body(response);</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>
