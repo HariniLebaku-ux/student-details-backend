@@ -6,7 +6,7 @@ import javax.persistence.*;
  * Represents a student and their associated department and section.
  */
 @Entity
-@Table(name = &quot;student&quot;, schema=&quot;student_core&quot;)
+@Table(name = &quot;student&quot;)
 public class Student {
 
     /**
@@ -36,11 +36,11 @@ public class Student {
     /**
      * Default constructor required by JPA.
      */
-<span class="fc" id="L39">    public Student() {}</span>
+<span class="nc" id="L39">    public Student() {}</span>
 
     /** @return the student ID */
     public String getStudentId() {
-<span class="fc" id="L43">        return studentId;</span>
+<span class="nc" id="L43">        return studentId;</span>
     }
 
     /** @param studentId sets the student ID */

@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.List;
 
+import com.pip.studentdetails.backend.entity.Department;
 import com.pip.studentdetails.backend.entity.Student;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,8 +17,6 @@ import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.test.context.ActiveProfiles;
 
 @DataJpaTest
-@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
-@SpringBootTest
 @ActiveProfiles("test")
 class StudentRepositoryTest {
 
@@ -29,6 +28,11 @@ class StudentRepositoryTest {
 
     @Test
     void insertStudent_ShouldInsertRow(){
+        Department department = new Department();
+
+        department.setDepartmentId("DEPT_CS");
+        department.setDepartmentName("Computer Science and Engineering");
+        testEntityManager.persist(department);
 
         repository.insertStudent("ST_031", "John","DEPT_CS", "A");
 
@@ -39,8 +43,16 @@ class StudentRepositoryTest {
 
     @Test
     void insertStudent_FailDuplicateKey() {
+        Department department = new Department();
+
+        department.setDepartmentId("DEPT_CS");
+        department.setDepartmentName("Computer Science and Engineering");
+        testEntityManager.persist(department);
+
+        repository.insertStudent("ST_031", "John","DEPT_CS", "A");
+
         assertThrows(DataIntegrityViolationException.class, () -> {
-            repository.insertStudent("ST_001", "John","DEPT_CS", "A");
+            repository.insertStudent("ST_031", "John","DEPT_CS", "A");
         });
     }
 

@@ -9,7 +9,7 @@
   * The relationship is mapped by the "semester" field in the Subject entity.
   */
  @Entity
- @Table(name = "semester", schema="student_core")
+ @Table(name = "semester")
  public class Semester {
 
      /**

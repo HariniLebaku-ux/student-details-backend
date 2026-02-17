@@ -8,7 +8,7 @@ import javax.persistence.*;
  * 2) student_id and subject_id are present inside the embedded id,
  */
 @Entity
-@Table(name = "student_details", schema="student_core")
+@Table(name = "student_details")
 public class StudentDetails {
 
     /**

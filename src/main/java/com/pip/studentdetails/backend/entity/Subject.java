@@ -8,7 +8,7 @@
   * Many Subjects belong to one Semester (Many-to-One).
   */
  @Entity
- @Table(name = "subject", schema="student_core")
+ @Table(name = "subject")
  public class Subject {
 
      /**

@@ -10,7 +10,7 @@ import java.util.Set;
  * students collection is mapped by the field in Student entity that refers to Department.
  */
 @Entity
-@Table(name = "department", schema="student_core")
+@Table(name = "department")
 public class Department {
 
     /**

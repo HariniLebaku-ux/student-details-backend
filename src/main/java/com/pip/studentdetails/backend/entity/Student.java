@@ -6,7 +6,7 @@ import javax.persistence.*;
  * Represents a student and their associated department and section.
  */
 @Entity
-@Table(name = "student", schema="student_core")
+@Table(name = "student")
 public class Student {
 
     /**

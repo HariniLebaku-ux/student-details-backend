@@ -10,7 +10,7 @@ import java.util.Set;
  * students collection is mapped by the field in Student entity that refers to Department.
  */
 @Entity
-@Table(name = &quot;department&quot;, schema=&quot;student_core&quot;)
+@Table(name = &quot;department&quot;)
 public class Department {
 
     /**
@@ -45,10 +45,10 @@ public class Department {
 <span class="nc" id="L45">    }</span>
 
 <span class="nc" id="L47">    public String getDepartmentId() { return departmentId; }</span>
-<span class="nc" id="L48">    public void setDepartmentId(String departmentId) { this.departmentId = departmentId; }</span>
+<span class="fc" id="L48">    public void setDepartmentId(String departmentId) { this.departmentId = departmentId; }</span>
 
 <span class="nc" id="L50">    public String getDepartmentName() { return departmentName; }</span>
-<span class="nc" id="L51">    public void setDepartmentName(String departmentName) { this.departmentName = departmentName; }</span>
+<span class="fc" id="L51">    public void setDepartmentName(String departmentName) { this.departmentName = departmentName; }</span>
 
 <span class="nc" id="L53">    public Set&lt;Student&gt; getStudents() { return students; }</span>
 <span class="nc" id="L54">    public void setStudents(Set&lt;Student&gt; students) { this.students = students; }</span>
