@@ -20,13 +20,13 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">1</div>
+<div class="counter">81</div>
 <p>tests</p>
 </div>
 </td>
 <td>
 <div class="infoBox" id="failures">
-<div class="counter">0</div>
+<div class="counter">7</div>
 <p>failures</p>
 </div>
 </td>
@@ -38,7 +38,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.975s</div>
+<div class="counter">6.690s</div>
 <p>duration</p>
 </div>
 </td>
@@ -47,8 +47,8 @@
 </div>
 </td>
 <td>
-<div class="infoBox success" id="successRate">
-<div class="percent">100%</div>
+<div class="infoBox failures" id="successRate">
+<div class="percent">91%</div>
 <p>successful</p>
 </div>
 </td>
@@ -58,13 +58,49 @@
 <div id="tabs">
 <ul class="tabLinks">
 <li>
-<a href="#tab0">Packages</a>
+<a href="#tab0">Failed tests</a>
 </li>
 <li>
-<a href="#tab1">Classes</a>
+<a href="#tab1">Packages</a>
+</li>
+<li>
+<a href="#tab2">Classes</a>
 </li>
 </ul>
 <div id="tab0" class="tab">
+<h2>Failed tests</h2>
+<ul class="linkList">
+<li>
+<a href="classes/com.pip.studentdetails.backend.repository.StudentRepositoryTest.html">StudentRepositoryTest</a>.
+<a href="classes/com.pip.studentdetails.backend.repository.StudentRepositoryTest.html#fetchDetailsForPassPercentage_Success()">fetchDetailsForPassPercentage_Success()</a>
+</li>
+<li>
+<a href="classes/com.pip.studentdetails.backend.repository.StudentRepositoryTest.html">StudentRepositoryTest</a>.
+<a href="classes/com.pip.studentdetails.backend.repository.StudentRepositoryTest.html#fetchStudentMarksForRanking_EmptyResult()">fetchStudentMarksForRanking_EmptyResult()</a>
+</li>
+<li>
+<a href="classes/com.pip.studentdetails.backend.repository.StudentRepositoryTest.html">StudentRepositoryTest</a>.
+<a href="classes/com.pip.studentdetails.backend.repository.StudentRepositoryTest.html#fetchStudentMarksForRanking_Success()">fetchStudentMarksForRanking_Success()</a>
+</li>
+<li>
+<a href="classes/com.pip.studentdetails.backend.repository.StudentRepositoryTest.html">StudentRepositoryTest</a>.
+<a href="classes/com.pip.studentdetails.backend.repository.StudentRepositoryTest.html#fetchStudentMarksForTopper_EmptyResult()">fetchStudentMarksForTopper_EmptyResult()</a>
+</li>
+<li>
+<a href="classes/com.pip.studentdetails.backend.repository.StudentRepositoryTest.html">StudentRepositoryTest</a>.
+<a href="classes/com.pip.studentdetails.backend.repository.StudentRepositoryTest.html#fetchStudentMarksForTopper_Success()">fetchStudentMarksForTopper_Success()</a>
+</li>
+<li>
+<a href="classes/com.pip.studentdetails.backend.repository.StudentRepositoryTest.html">StudentRepositoryTest</a>.
+<a href="classes/com.pip.studentdetails.backend.repository.StudentRepositoryTest.html#insertStudent_FailDuplicateKey()">insertStudent_FailDuplicateKey()</a>
+</li>
+<li>
+<a href="classes/com.pip.studentdetails.backend.repository.StudentRepositoryTest.html">StudentRepositoryTest</a>.
+<a href="classes/com.pip.studentdetails.backend.repository.StudentRepositoryTest.html#insertStudent_ShouldInsertRow()">insertStudent_ShouldInsertRow()</a>
+</li>
+</ul>
+</div>
+<div id="tab1" class="tab">
 <h2>Packages</h2>
 <table>
 <thead>
@@ -80,18 +116,68 @@
 <tbody>
 <tr>
 <td class="success">
-<a href="packages/com.pip.studentdetails.backend.repository.html">com.pip.studentdetails.backend.repository</a>
+<a href="packages/com.pip.studentdetails.backend.config.html">com.pip.studentdetails.backend.config</a>
 </td>
 <td>1</td>
 <td>0</td>
 <td>0</td>
-<td>0.975s</td>
+<td>4.138s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="packages/com.pip.studentdetails.backend.controller.html">com.pip.studentdetails.backend.controller</a>
+</td>
+<td>18</td>
+<td>0</td>
+<td>0</td>
+<td>1.495s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="packages/com.pip.studentdetails.backend.exception.html">com.pip.studentdetails.backend.exception</a>
+</td>
+<td>9</td>
+<td>0</td>
+<td>0</td>
+<td>0.331s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="failures">
+<a href="packages/com.pip.studentdetails.backend.repository.html">com.pip.studentdetails.backend.repository</a>
+</td>
+<td>7</td>
+<td>7</td>
+<td>0</td>
+<td>0.009s</td>
+<td class="failures">0%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="packages/com.pip.studentdetails.backend.response.html">com.pip.studentdetails.backend.response</a>
+</td>
+<td>36</td>
+<td>0</td>
+<td>0</td>
+<td>0.165s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="packages/com.pip.studentdetails.backend.service.html">com.pip.studentdetails.backend.service</a>
+</td>
+<td>10</td>
+<td>0</td>
+<td>0</td>
+<td>0.552s</td>
 <td class="success">100%</td>
 </tr>
 </tbody>
 </table>
 </div>
-<div id="tab1" class="tab">
+<div id="tab2" class="tab">
 <h2>Classes</h2>
 <table>
 <thead>
@@ -107,12 +193,132 @@
 <tbody>
 <tr>
 <td class="success">
-<a href="classes/com.pip.studentdetails.backend.repository.StudentRepositoryTest.html">com.pip.studentdetails.backend.repository.StudentRepositoryTest</a>
+<a href="classes/com.pip.studentdetails.backend.config.RestTemplateConfigTest.html">com.pip.studentdetails.backend.config.RestTemplateConfigTest</a>
 </td>
 <td>1</td>
 <td>0</td>
 <td>0</td>
-<td>0.975s</td>
+<td>4.138s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="classes/com.pip.studentdetails.backend.controller.StudentBackendControllerTest.html">com.pip.studentdetails.backend.controller.StudentBackendControllerTest</a>
+</td>
+<td>18</td>
+<td>0</td>
+<td>0</td>
+<td>1.495s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="classes/com.pip.studentdetails.backend.exception.ApiErrorResponseTest.html">com.pip.studentdetails.backend.exception.ApiErrorResponseTest</a>
+</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>0.026s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="classes/com.pip.studentdetails.backend.exception.GlobalExceptionHandlerTest.html">com.pip.studentdetails.backend.exception.GlobalExceptionHandlerTest</a>
+</td>
+<td>5</td>
+<td>0</td>
+<td>0</td>
+<td>0.305s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="failures">
+<a href="classes/com.pip.studentdetails.backend.repository.StudentRepositoryTest.html">com.pip.studentdetails.backend.repository.StudentRepositoryTest</a>
+</td>
+<td>7</td>
+<td>7</td>
+<td>0</td>
+<td>0.009s</td>
+<td class="failures">0%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="classes/com.pip.studentdetails.backend.response.ApiResponseTest.html">com.pip.studentdetails.backend.response.ApiResponseTest</a>
+</td>
+<td>5</td>
+<td>0</td>
+<td>0</td>
+<td>0.043s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="classes/com.pip.studentdetails.backend.response.DepartmentPassPercentageRecordTest.html">com.pip.studentdetails.backend.response.DepartmentPassPercentageRecordTest</a>
+</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>0.028s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="classes/com.pip.studentdetails.backend.response.DepartmentTopperRecordTest.html">com.pip.studentdetails.backend.response.DepartmentTopperRecordTest</a>
+</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0.026s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="classes/com.pip.studentdetails.backend.response.DepartmentTopperTest.html">com.pip.studentdetails.backend.response.DepartmentTopperTest</a>
+</td>
+<td>6</td>
+<td>0</td>
+<td>0</td>
+<td>0.015s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="classes/com.pip.studentdetails.backend.response.PassPercentageReportTest.html">com.pip.studentdetails.backend.response.PassPercentageReportTest</a>
+</td>
+<td>7</td>
+<td>0</td>
+<td>0</td>
+<td>0.014s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="classes/com.pip.studentdetails.backend.response.StudentRankingRecordTest.html">com.pip.studentdetails.backend.response.StudentRankingRecordTest</a>
+</td>
+<td>6</td>
+<td>0</td>
+<td>0</td>
+<td>0.021s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="classes/com.pip.studentdetails.backend.response.StudentRankingTest.html">com.pip.studentdetails.backend.response.StudentRankingTest</a>
+</td>
+<td>6</td>
+<td>0</td>
+<td>0</td>
+<td>0.018s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="classes/com.pip.studentdetails.backend.service.StudentBackendServiceImplTest.html">com.pip.studentdetails.backend.service.StudentBackendServiceImplTest</a>
+</td>
+<td>10</td>
+<td>0</td>
+<td>0</td>
+<td>0.552s</td>
 <td class="success">100%</td>
 </tr>
 </tbody>
@@ -126,7 +332,7 @@
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 7.6</a> at Feb 17, 2026, 11:46:19 PM</p>
+<a href="http://www.gradle.org">Gradle 7.6</a> at Feb 18, 2026, 1:13:21 AM</p>
 </div>
 </div>
 </body>

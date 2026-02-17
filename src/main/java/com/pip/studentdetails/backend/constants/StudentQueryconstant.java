@@ -27,9 +27,9 @@ public class StudentQueryconstant {
     select  st.student_id as student_id, st.student_name as student_name,
 	    sub.semester_id as semester_id, sub.subject_id as subject_id,
         sd.marks as marks, d.department_name as department_name
-	from student_core.student st JOIN student_core.student_details sd
-		ON st.student_id = sd.student_id JOIN student_core.subject sub
-		ON sd.subject_id = sub.subject_id JOIN student_core.department d
+	from student st JOIN student_details sd
+		ON st.student_id = sd.student_id JOIN subject sub
+		ON sd.subject_id = sub.subject_id JOIN department d
 		ON st.department_id = d.department_id WHERE st.department_id=:departmentId""";
 
 	/**
@@ -41,9 +41,9 @@ public class StudentQueryconstant {
 		st.section as section, sub.semester_id as semester_id,
 		sub.subject_id as subject_id, sd.marks as marks, 
 		d.department_name as department_name
-	from student_core.student st JOIN student_core.student_details sd
-		ON st.student_id = sd.student_id JOIN student_core.subject sub
-		ON sd.subject_id = sub.subject_id JOIN student_core.department d
+	from student st JOIN student_details sd
+		ON st.student_id = sd.student_id JOIN subject sub
+		ON sd.subject_id = sub.subject_id JOIN department d
 		ON st.department_id = d.department_id WHERE st.department_id=:departmentId""";
 
 	/**
@@ -54,8 +54,8 @@ public class StudentQueryconstant {
 	select 	d.department_name as department_name, sub.semester_id as semester_id, 
 		sub.subject_id as subject_id, sub.subject_name as subject_name, 
 		st.section as section, sd.marks as marks
-	from student_core.student st JOIN student_core.student_details sd
-		ON st.student_id = sd.student_id JOIN student_core.subject sub
-		ON sd.subject_id = sub.subject_id JOIN student_core.department d
+	from student st JOIN student_details sd
+		ON st.student_id = sd.student_id JOIN subject sub
+		ON sd.subject_id = sub.subject_id JOIN department d
 		ON st.department_id = d.department_id""";
 }
