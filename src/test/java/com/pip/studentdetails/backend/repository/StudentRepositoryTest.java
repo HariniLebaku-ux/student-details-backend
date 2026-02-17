@@ -1,4 +1,3 @@
-/*
 package com.pip.studentdetails.backend.repository;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -10,10 +9,8 @@ import com.pip.studentdetails.backend.entity.Department;
 import com.pip.studentdetails.backend.entity.Student;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.test.context.ActiveProfiles;
 
@@ -116,4 +113,3 @@ class StudentRepositoryTest {
         assertThat(departmentWisePassPercentageRecord[5]).isNotNull();
     }
 }
-*/

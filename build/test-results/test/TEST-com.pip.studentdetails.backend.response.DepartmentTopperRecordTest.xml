@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.pip.studentdetails.backend.response.DepartmentTopperRecordTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-02-17T19:43:19" hostname="BDC6-L-141HVWQ" time="0.027">
+<testsuite name="com.pip.studentdetails.backend.response.DepartmentTopperRecordTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-02-17T21:10:41" hostname="BDC6-L-141HVWQ" time="0.023">
   <properties/>
-  <testcase name="equalsAndHashCodeShouldWorkForSameValues()" classname="com.pip.studentdetails.backend.response.DepartmentTopperRecordTest" time="0.012"/>
-  <testcase name="shouldCreateRecordAndExposeValues()" classname="com.pip.studentdetails.backend.response.DepartmentTopperRecordTest" time="0.014"/>
+  <testcase name="equalsAndHashCodeShouldWorkForSameValues()" classname="com.pip.studentdetails.backend.response.DepartmentTopperRecordTest" time="0.02"/>
+  <testcase name="shouldCreateRecordAndExposeValues()" classname="com.pip.studentdetails.backend.response.DepartmentTopperRecordTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

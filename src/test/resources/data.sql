@@ -6,32 +6,17 @@ INSERT INTO student_details (student_id, subject_id, marks, student_name, depart
 INSERT INTO student_details (student_id, subject_id, marks, student_name, department_id) VALUES ('ST_002', 'SUB_005', 87, 'Arun', 'CSE');
 
 
---
--- TOC entry 2857 (class 0 OID 24743)
--- Dependencies: 200
--- Data for Name: department; Type: TABLE DATA; Schema: student_core; Owner: postgres
---
+
 
 INSERT INTO department (department_id, department_name) VALUES ('DEPT_CS', 'Computer Science and Engineering');
 INSERT INTO department (department_id, department_name) VALUES ('DEPT_ECE', 'Electronics and Communication Engineering');
 INSERT INTO department (department_id, department_name) VALUES ('DEPT_IT', 'Information Technology');
 
 
---
--- TOC entry 2858 (class 0 OID 24758)
--- Dependencies: 201
--- Data for Name: semester; Type: TABLE DATA; Schema: student_core; Owner: postgres
---
-
 INSERT INTO semester (semester_id, semester_name) VALUES ('SEM_1', 'Semester One');
 INSERT INTO semester (semester_id, semester_name) VALUES ('SEM_2', 'Semester Two');
 
 
---
--- TOC entry 2860 (class 0 OID 32817)
--- Dependencies: 203
--- Data for Name: student; Type: TABLE DATA; Schema: student_core; Owner: postgres
---
 
 INSERT INTO student (student_id, student_name, department_id, section) VALUES ('ST_001', 'john', 'DEPT_CS', 'A');
 INSERT INTO student (student_id, student_name, department_id, section) VALUES ('ST_002', 'raju', 'DEPT_ECE', 'A');
@@ -52,12 +37,6 @@ INSERT INTO student (student_id, student_name, department_id, section) VALUES ('
 INSERT INTO student (student_id, student_name, department_id, section) VALUES ('ST_017', 'raja', 'DEPT_ECE', 'A');
 INSERT INTO student (student_id, student_name, department_id, section) VALUES ('ST_018', 'roja', 'DEPT_IT', 'B');
 
-
---
--- TOC entry 2861 (class 0 OID 32827)
--- Dependencies: 204
--- Data for Name: student_details; Type: TABLE DATA; Schema: student_core; Owner: postgres
---
 
 INSERT INTO student_details (student_id, subject_id, marks) VALUES ('ST_001', 'SUB_001', 100);
 INSERT INTO student_details (student_id, subject_id, marks) VALUES ('ST_001', 'SUB_002', 90);
@@ -277,11 +256,6 @@ INSERT INTO student_details (student_id, subject_id, marks) VALUES ('ST_018', 'S
 INSERT INTO student_details (student_id, subject_id, marks) VALUES ('ST_018', 'SUB_016', 100);
 
 
---
--- TOC entry 2859 (class 0 OID 24763)
--- Dependencies: 202
--- Data for Name: subject; Type: TABLE DATA; Schema: student_core; Owner: postgres
---
 
 INSERT INTO subject (subject_id, subject_name, semester_id) VALUES ('SUB_001', 'English', 'SEM_1');
 INSERT INTO subject (subject_id, subject_name, semester_id) VALUES ('SUB_002', 'Physics', 'SEM_1');

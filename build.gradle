@@ -65,9 +65,8 @@ jacocoTestCoverageVerification {
 sonar {
     properties {
         property 'sonar.projectKey', 'harinilebaku-ux_student-details-backend'
-        property 'sonar.organization', 'HariniLebaku-ux'
+        property 'sonar.organization', 'harinilebaku-ux'
         property 'sonar.host.url', 'https://sonarcloud.io'
-        property "sonar.login", 'f1419989338c8048eb049219d3dff5e5971b86e7'
         property 'sonar.java.coveragePlugin', 'jacoco'
         property 'sonar.junit.reportPaths', file("${buildDir}/test-results/test").absolutePath
         property 'sonar.coverage.jacoco.xmlReportPaths', file("${buildDir}/reports/jacoco/test/jacocoTestReport.xml").absolutePath

@@ -87,7 +87,7 @@ jobs:
       # For self-hosted SonarQube (NOT localhost in GitHub runners), also set SONAR_HOST_URL secret.
       - name: SonarQube Scan
         env:
-          SONAR_TOKEN: f1419989338c8048eb049219d3dff5e5971b86e7
+          SONAR_TOKEN: ${{secrets.SONAR_TOKEN}}
           SONAR_HOST_URL: https://sonarcloud.io
         run: |
           ./gradlew --no-daemon sonar \
