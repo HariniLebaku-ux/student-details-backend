@@ -25,13 +25,13 @@ jobs:
           java-version: 17
           cache: gradle
 
+      - name: Grant execute permissions for Gradle
+        run: chmod +x gradlew
+
       - name: Show Gradle & Java versions
         run: |
           java -version
           ./gradlew --version
-
-      - name: Grant execute permissions for Gradle
-        run: chmod +x gradlew
 
       # Run unit tests (JUnit 5) and generate JaCoCo report
       - name: Clean, Test, and generate JaCoCo report
