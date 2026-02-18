@@ -92,6 +92,6 @@ jobs:
         run: |
           ./gradlew --no-daemon sonar \
             -Dsonar.login=$SONAR_TOKEN \
-            -Dsonar.organization=HariniLebaku-ux \
+            -Dsonar.organization=harinilebaku-ux \
             -Dsonar.projectKey=harinilebaku-ux_student-details-backend \
             $([ -n "$SONAR_HOST_URL" ] && echo "-Dsonar.host.url=$SONAR_HOST_URL")
