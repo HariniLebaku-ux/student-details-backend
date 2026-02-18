@@ -86,13 +86,8 @@ jobs:
       # Make sure to configure SONAR_TOKEN secret in GitHub repo settings.
       # For self-hosted SonarQube (NOT localhost in GitHub runners), also set SONAR_HOST_URL secret.
       - name: SonarQube Scan
+        uses: SonarSource/sonarcloud-github-action@v2
         env:
           SONAR_TOKEN: ${{secrets.SONAR_TOKEN}}
           SONAR_HOST_URL: https://sonarcloud.io
-        run: |
-          ./gradlew --no-daemon sonar \
-            -Dsonar.login=$SONAR_TOKEN \
-            -Dsonar.organization=harinilebaku-ux \
-            -Dsonar.projectKey=harinilebaku-ux_student-details-backend \
-            -Dsonar.branch.name=main \
-            -Dsonar.host.url=$SONAR_HOST_URL
+        
