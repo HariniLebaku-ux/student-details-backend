@@ -95,4 +95,4 @@ jobs:
             -Dsonar.organization=harinilebaku-ux \
             -Dsonar.projectKey=harinilebaku-ux_student-details-backend \
             -Dsonar.branch.name=main \
-            $([ -n "$SONAR_HOST_URL" ] && echo "-Dsonar.host.url=$SONAR_HOST_URL")
+            -Dsonar.host.url=$SONAR_HOST_URL
