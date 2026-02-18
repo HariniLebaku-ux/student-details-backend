@@ -68,6 +68,7 @@ sonar {
         property 'sonar.organization', 'harinilebaku-ux'
         property 'sonar.host.url', 'https://sonarcloud.io'
         property 'sonar.java.coveragePlugin', 'jacoco'
+        property 'sonar.login', System.getenv("SONAR_TOKEN")
         property 'sonar.junit.reportPaths', file("${buildDir}/test-results/test").absolutePath
         property 'sonar.coverage.jacoco.xmlReportPaths', file("${buildDir}/reports/jacoco/test/jacocoTestReport.xml").absolutePath
         property "sonar.exclusions", """**/com/pip/studentdetails/backend/entity/**, **/com/pip/studentdetails/backend/request/**, **/com/pip/studentdetails/backend/constants/**, **/com/pip/studentdetails/backend/response/**""".trim()
