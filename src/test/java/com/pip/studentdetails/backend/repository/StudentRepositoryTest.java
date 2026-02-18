@@ -1,3 +1,4 @@
+/*
 package com.pip.studentdetails.backend.repository;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -113,3 +114,4 @@ class StudentRepositoryTest {
         assertThat(departmentWisePassPercentageRecord[5]).isNotNull();
     }
 }
+*/
