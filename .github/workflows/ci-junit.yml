@@ -88,11 +88,4 @@ jobs:
       - name: SonarQube Scan
         env:
           SONAR_TOKEN: ${{secrets.SONAR_TOKEN}}
-          SONAR_HOST_URL: https://sonarcloud.io
-        run: |
-          ./gradlew --no-daemon sonar \
-            -Dsonar.login=$SONAR_TOKEN \
-            -Dsonar.organization=harinilebaku-ux \
-            -Dsonar.projectKey=harinilebaku-ux_student-details-backend \
-            -Dsonar.branch.name=main \
-            $([ -n "$SONAR_HOST_URL" ] && echo "-Dsonar.host.url=$SONAR_HOST_URL")
+        run: ./gradlew --no-daemon sonar
