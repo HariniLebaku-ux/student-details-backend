@@ -88,4 +88,4 @@ jobs:
       - name: SonarQube Scan
         env:
           SONAR_TOKEN: ${{secrets.SONAR_TOKEN}}
-        run: ./gradlew --no-daemon sonar
+        run: ./gradlew --no-daemon sonar -Dsonar.login=$SONAR_TOKEN
