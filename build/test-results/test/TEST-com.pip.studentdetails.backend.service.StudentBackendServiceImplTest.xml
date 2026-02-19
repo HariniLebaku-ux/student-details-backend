@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.pip.studentdetails.backend.service.StudentBackendServiceImplTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-02-19T09:20:10" hostname="BDC6-L-141HVWQ" time="3.43">
-  <properties/>
-  <testcase name="createStudent_shouldThrowStudentAlreadyExistsException_whenStudentIdExists()" classname="com.pip.studentdetails.backend.service.StudentBackendServiceImplTest" time="3.43"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

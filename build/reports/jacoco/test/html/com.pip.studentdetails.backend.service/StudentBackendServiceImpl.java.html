@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
  * Service layer implementation for Student Backend operations.
  */
 @Service(&quot;StudentBackendServiceImpl&quot;)
-<span class="fc" id="L21">public class StudentBackendServiceImpl implements StudentBackendService {</span>
+<span class="nc" id="L21">public class StudentBackendServiceImpl implements StudentBackendService {</span>
 
     /**
      * Repository for Student table operations and Used to insert a student record into the database.
@@ -32,7 +32,7 @@ import java.util.stream.Collectors;
     @Autowired
     private StudentDetailsRepository studentDetailsRepository;
 
-<span class="fc" id="L35">    ObjectMapper mapper = new ObjectMapper();</span>
+<span class="nc" id="L35">    ObjectMapper mapper = new ObjectMapper();</span>
 
     /**
      * Creates a Student record in the database.
@@ -41,9 +41,9 @@ import java.util.stream.Collectors;
     @Override
     public void createStudent(StudentRequest studentRequest) {
 
-<span class="pc bpc" id="L44" title="1 of 2 branches missed.">        if (studentRepository.existsById(studentRequest.studentId())) {</span>
-<span class="fc" id="L45">            throw new StudentAlreadyExistsException(</span>
-<span class="fc" id="L46">                    &quot;Student with id &quot; + studentRequest.studentId() + &quot; already exists&quot;);</span>
+<span class="nc bnc" id="L44" title="All 2 branches missed.">        if (studentRepository.existsById(studentRequest.studentId())) {</span>
+<span class="nc" id="L45">            throw new StudentAlreadyExistsException(</span>
+<span class="nc" id="L46">                    &quot;Student with id &quot; + studentRequest.studentId() + &quot; already exists&quot;);</span>
         }
         // Passing record values to repository insert method
 <span class="nc" id="L49">        studentRepository.insertStudent(studentRequest.studentId(),studentRequest.studentName(),studentRequest.departmentId(),studentRequest.sectionId());</span>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.pip.studentdetails.backend.exception.StudentAlreadyExistsExceptionTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-02-19T09:32:11" hostname="BDC6-L-141HVWQ" time="0.089">
+  <properties/>
+  <testcase name="shouldThrowStudentAlreadyExistsException()" classname="com.pip.studentdetails.backend.exception.StudentAlreadyExistsExceptionTest" time="0.089"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
