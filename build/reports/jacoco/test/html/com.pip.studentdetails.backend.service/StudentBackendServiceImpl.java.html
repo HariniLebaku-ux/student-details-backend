@@ -42,12 +42,12 @@ import java.util.stream.Collectors;
     public void createStudent(StudentRequest studentRequest) {
 
 <span class="pc bpc" id="L44" title="1 of 2 branches missed.">        if (studentRepository.existsById(studentRequest.studentId())) {</span>
-<span class="nc" id="L45">            throw new StudentAlreadyExistsException(</span>
-<span class="nc" id="L46">                    &quot;Student with id &quot; + studentRequest.studentId() + &quot; already exists&quot;);</span>
+<span class="fc" id="L45">            throw new StudentAlreadyExistsException(</span>
+<span class="fc" id="L46">                    &quot;Student with id &quot; + studentRequest.studentId() + &quot; already exists&quot;);</span>
         }
         // Passing record values to repository insert method
-<span class="fc" id="L49">        studentRepository.insertStudent(studentRequest.studentId(),studentRequest.studentName(),studentRequest.departmentId(),studentRequest.sectionId());</span>
-<span class="fc" id="L50">    }</span>
+<span class="nc" id="L49">        studentRepository.insertStudent(studentRequest.studentId(),studentRequest.studentName(),studentRequest.departmentId(),studentRequest.sectionId());</span>
+<span class="nc" id="L50">    }</span>
 
     /**
      * Creates StudentDetails record(s) in the database.
@@ -55,8 +55,8 @@ import java.util.stream.Collectors;
     @Override
     public void createStudentDetails(StudentDetailsRequest studentDetailsRequest) {
         // Passing record values to repository insert method
-<span class="fc" id="L58">        studentDetailsRepository.insertStudentDetails(studentDetailsRequest.studentId(), studentDetailsRequest.subjectId(), studentDetailsRequest.marks());</span>
-<span class="fc" id="L59">    }</span>
+<span class="nc" id="L58">        studentDetailsRepository.insertStudentDetails(studentDetailsRequest.studentId(), studentDetailsRequest.subjectId(), studentDetailsRequest.marks());</span>
+<span class="nc" id="L59">    }</span>
 
     /**
      * Fetching the department topper list from database based on the departmentId
@@ -67,46 +67,46 @@ import java.util.stream.Collectors;
         try {
 
         /**Fetch Raw Data from Database*/
-<span class="fc" id="L70">        List&lt;DepartmentTopper&gt; departmentTopperDetails = studentRepository.fetchStudentMarksForTopper(departmentId)</span>
-<span class="fc" id="L71">                .stream()</span>
-<span class="fc" id="L72">                .map(r -&gt; new DepartmentTopper(</span>
-<span class="fc" id="L73">                        r[0].toString(), r[1].toString(), r[2].toString(), r[3].toString(), ((Number) r[4]).intValue(), r[5].toString()</span>
-<span class="fc" id="L74">                )).toList();</span>
+<span class="nc" id="L70">        List&lt;DepartmentTopper&gt; departmentTopperDetails = studentRepository.fetchStudentMarksForTopper(departmentId)</span>
+<span class="nc" id="L71">                .stream()</span>
+<span class="nc" id="L72">                .map(r -&gt; new DepartmentTopper(</span>
+<span class="nc" id="L73">                        r[0].toString(), r[1].toString(), r[2].toString(), r[3].toString(), ((Number) r[4]).intValue(), r[5].toString()</span>
+<span class="nc" id="L74">                )).toList();</span>
 
-<span class="fc" id="L76">        List&lt;DepartmentTopperRecord&gt; departmentTopperRecordList=departmentTopperDetails.stream()</span>
-<span class="fc" id="L77">                .collect(Collectors.groupingBy(DepartmentTopper::semesterId))</span>
-<span class="fc" id="L78">                .values().stream()</span>
-<span class="fc" id="L79">                .flatMap(departmentTopperListBySemester -&gt;  {</span>
-<span class="fc" id="L80">                    List&lt;DepartmentTopperRecord&gt; departmentTopperRecords =</span>
-<span class="fc" id="L81">                            departmentTopperListBySemester.stream()</span>
-<span class="fc" id="L82">                                    .collect(Collectors.groupingBy(DepartmentTopper::studentId))</span>
-<span class="fc" id="L83">                                    .values().stream()</span>
-<span class="fc" id="L84">                                    .map(departmentTopperList -&gt; {</span>
-<span class="fc" id="L85">                                        DepartmentTopper departmentTopper = departmentTopperList.get(0);</span>
-<span class="fc" id="L86">                                        int totalMarks = departmentTopperList.stream()</span>
-<span class="fc" id="L87">                                                .mapToInt(DepartmentTopper::marks)</span>
-<span class="fc" id="L88">                                                .sum();</span>
-<span class="fc" id="L89">                                        int totalSubjects = departmentTopperList.size();</span>
-<span class="fc" id="L90">                                        double percentage = Math.round((totalMarks/(totalSubjects*100.0))*10000)/100.0;</span>
-<span class="fc" id="L91">                                        return new DepartmentTopperRecord(</span>
-<span class="fc" id="L92">                                                departmentTopper.studentId(),</span>
-<span class="fc" id="L93">                                                departmentTopper.studentName(),</span>
-<span class="fc" id="L94">                                                percentage,</span>
-<span class="fc" id="L95">                                                &quot;Semester &quot; +departmentTopper.semesterId().replaceAll(&quot;\\D+&quot;, &quot;&quot;),</span>
-<span class="fc" id="L96">                                                departmentTopper.departmentName()</span>
+<span class="nc" id="L76">        List&lt;DepartmentTopperRecord&gt; departmentTopperRecordList=departmentTopperDetails.stream()</span>
+<span class="nc" id="L77">                .collect(Collectors.groupingBy(DepartmentTopper::semesterId))</span>
+<span class="nc" id="L78">                .values().stream()</span>
+<span class="nc" id="L79">                .flatMap(departmentTopperListBySemester -&gt;  {</span>
+<span class="nc" id="L80">                    List&lt;DepartmentTopperRecord&gt; departmentTopperRecords =</span>
+<span class="nc" id="L81">                            departmentTopperListBySemester.stream()</span>
+<span class="nc" id="L82">                                    .collect(Collectors.groupingBy(DepartmentTopper::studentId))</span>
+<span class="nc" id="L83">                                    .values().stream()</span>
+<span class="nc" id="L84">                                    .map(departmentTopperList -&gt; {</span>
+<span class="nc" id="L85">                                        DepartmentTopper departmentTopper = departmentTopperList.get(0);</span>
+<span class="nc" id="L86">                                        int totalMarks = departmentTopperList.stream()</span>
+<span class="nc" id="L87">                                                .mapToInt(DepartmentTopper::marks)</span>
+<span class="nc" id="L88">                                                .sum();</span>
+<span class="nc" id="L89">                                        int totalSubjects = departmentTopperList.size();</span>
+<span class="nc" id="L90">                                        double percentage = Math.round((totalMarks/(totalSubjects*100.0))*10000)/100.0;</span>
+<span class="nc" id="L91">                                        return new DepartmentTopperRecord(</span>
+<span class="nc" id="L92">                                                departmentTopper.studentId(),</span>
+<span class="nc" id="L93">                                                departmentTopper.studentName(),</span>
+<span class="nc" id="L94">                                                percentage,</span>
+<span class="nc" id="L95">                                                &quot;Semester &quot; +departmentTopper.semesterId().replaceAll(&quot;\\D+&quot;, &quot;&quot;),</span>
+<span class="nc" id="L96">                                                departmentTopper.departmentName()</span>
                                         );
                                     })
-<span class="fc" id="L99">                                    .sorted(Comparator.comparingDouble(DepartmentTopperRecord::percentage).reversed())</span>
-<span class="fc" id="L100">                                .toList();</span>
+<span class="nc" id="L99">                                    .sorted(Comparator.comparingDouble(DepartmentTopperRecord::percentage).reversed())</span>
+<span class="nc" id="L100">                                .toList();</span>
 
-<span class="fc" id="L102">                   double maxPercentage = departmentTopperRecords.stream()</span>
-<span class="fc" id="L103">                        .mapToDouble(DepartmentTopperRecord::percentage)</span>
-<span class="fc" id="L104">                        .max()</span>
-<span class="fc" id="L105">                        .orElse(0);</span>
-<span class="fc" id="L106">                return departmentTopperRecords.stream()</span>
-<span class="fc bfc" id="L107" title="All 2 branches covered.">                        .filter(r -&gt; r.percentage() == maxPercentage);</span>
-<span class="fc" id="L108">                }).sorted(Comparator.comparing(DepartmentTopperRecord::semesterId)).toList();</span>
-<span class="fc" id="L109">            return mapper.writeValueAsString(departmentTopperRecordList);</span>
+<span class="nc" id="L102">                   double maxPercentage = departmentTopperRecords.stream()</span>
+<span class="nc" id="L103">                        .mapToDouble(DepartmentTopperRecord::percentage)</span>
+<span class="nc" id="L104">                        .max()</span>
+<span class="nc" id="L105">                        .orElse(0);</span>
+<span class="nc" id="L106">                return departmentTopperRecords.stream()</span>
+<span class="nc bnc" id="L107" title="All 2 branches missed.">                        .filter(r -&gt; r.percentage() == maxPercentage);</span>
+<span class="nc" id="L108">                }).sorted(Comparator.comparing(DepartmentTopperRecord::semesterId)).toList();</span>
+<span class="nc" id="L109">            return mapper.writeValueAsString(departmentTopperRecordList);</span>
         }
 <span class="nc" id="L111">        catch(JsonProcessingException e) {</span>
 <span class="nc" id="L112">                throw new RuntimeException(&quot;Exception Occurred while processing&quot; + e);</span>
@@ -121,39 +121,39 @@ import java.util.stream.Collectors;
     public String getDepartmentWiseRankingDetails(String departmentId){
         try {
             /** Fetch raw rows from DB and map to domain rows*/
-<span class="fc" id="L124">            List&lt;StudentRanking&gt; subjectRowsByStudent  = studentRepository.fetchStudentMarksForRanking(departmentId)</span>
-<span class="fc" id="L125">                    .stream().map(r -&gt; new StudentRanking(r[0].toString(), r[1].toString(), r[2].toString(), r[3].toString(), r[4].toString(), ((Number) r[5]).intValue(), r[6].toString())).toList();</span>
+<span class="nc" id="L124">            List&lt;StudentRanking&gt; subjectRowsByStudent  = studentRepository.fetchStudentMarksForRanking(departmentId)</span>
+<span class="nc" id="L125">                    .stream().map(r -&gt; new StudentRanking(r[0].toString(), r[1].toString(), r[2].toString(), r[3].toString(), r[4].toString(), ((Number) r[5]).intValue(), r[6].toString())).toList();</span>
 
-<span class="fc" id="L127">            List&lt;StudentRankingRecord&gt; rankedStudentsAcrossSemesters = subjectRowsByStudent .stream().collect(Collectors.groupingBy(StudentRanking::semesterId)).values().stream().flatMap(studentRankingRecordListBySemester -&gt; {</span>
-<span class="fc" id="L128">                        List&lt;StudentRankingRecord&gt; listOfStudentRankingRecords = studentRankingRecordListBySemester.stream()</span>
-<span class="fc" id="L129">                                .collect(Collectors.groupingBy(StudentRanking::studentId))</span>
-<span class="fc" id="L130">                                .values().stream().map(studentRankingList -&gt; {</span>
-<span class="fc" id="L131">                                    StudentRanking studentRanking = studentRankingList.get(0);</span>
-<span class="pc bpc" id="L132" title="1 of 2 branches missed.">                                    boolean isFailed=studentRankingList.stream().anyMatch(s -&gt; s.marks() &lt; 40);</span>
-<span class="fc" id="L133">                                    int totalMarksForSemester  = studentRankingList.stream().mapToInt(StudentRanking::marks).sum();</span>
-<span class="fc" id="L134">                                    int subjectsForThisStudentInSemester  = studentRankingList.size();</span>
-<span class="fc" id="L135">                                    double percentage = Math.round((totalMarksForSemester / (subjectsForThisStudentInSemester * 100.0)) * 10000) / 100.0;</span>
-<span class="fc" id="L136">                                    return new StudentRankingRecord(0, studentRanking.studentId(), studentRanking.studentName(), studentRanking.section(), percentage, &quot;Semester &quot; + studentRanking.semesterId().replaceAll(&quot;\\D+&quot;, &quot;&quot;), studentRanking.departmentName(), isFailed</span>
+<span class="nc" id="L127">            List&lt;StudentRankingRecord&gt; rankedStudentsAcrossSemesters = subjectRowsByStudent .stream().collect(Collectors.groupingBy(StudentRanking::semesterId)).values().stream().flatMap(studentRankingRecordListBySemester -&gt; {</span>
+<span class="nc" id="L128">                        List&lt;StudentRankingRecord&gt; listOfStudentRankingRecords = studentRankingRecordListBySemester.stream()</span>
+<span class="nc" id="L129">                                .collect(Collectors.groupingBy(StudentRanking::studentId))</span>
+<span class="nc" id="L130">                                .values().stream().map(studentRankingList -&gt; {</span>
+<span class="nc" id="L131">                                    StudentRanking studentRanking = studentRankingList.get(0);</span>
+<span class="nc bnc" id="L132" title="All 2 branches missed.">                                    boolean isFailed=studentRankingList.stream().anyMatch(s -&gt; s.marks() &lt; 40);</span>
+<span class="nc" id="L133">                                    int totalMarksForSemester  = studentRankingList.stream().mapToInt(StudentRanking::marks).sum();</span>
+<span class="nc" id="L134">                                    int subjectsForThisStudentInSemester  = studentRankingList.size();</span>
+<span class="nc" id="L135">                                    double percentage = Math.round((totalMarksForSemester / (subjectsForThisStudentInSemester * 100.0)) * 10000) / 100.0;</span>
+<span class="nc" id="L136">                                    return new StudentRankingRecord(0, studentRanking.studentId(), studentRanking.studentName(), studentRanking.section(), percentage, &quot;Semester &quot; + studentRanking.semesterId().replaceAll(&quot;\\D+&quot;, &quot;&quot;), studentRanking.departmentName(), isFailed</span>
                                     );
-<span class="fc" id="L138">                                }).sorted(Comparator.comparingDouble(StudentRankingRecord::percentage).reversed()).toList();</span>
+<span class="nc" id="L138">                                }).sorted(Comparator.comparingDouble(StudentRankingRecord::percentage).reversed()).toList();</span>
 
-<span class="fc" id="L140">                        int currentRank  = 0;</span>
-<span class="fc" id="L141">                        double previousPercentage  = Double.NaN;</span>
-<span class="fc" id="L142">                        List&lt;StudentRankingRecord&gt; rankedInThisSemester = new ArrayList&lt;&gt;();</span>
-<span class="fc bfc" id="L143" title="All 2 branches covered.">                        for (StudentRankingRecord r : listOfStudentRankingRecords) {</span>
-<span class="pc bpc" id="L144" title="1 of 2 branches missed.">                            if (!r.isFailed()) {</span>
-<span class="pc bpc" id="L145" title="1 of 2 branches missed.">                                if (Double.compare(r.percentage(), previousPercentage ) != 0) { currentRank ++; previousPercentage = r.percentage();</span>
+<span class="nc" id="L140">                        int currentRank  = 0;</span>
+<span class="nc" id="L141">                        double previousPercentage  = Double.NaN;</span>
+<span class="nc" id="L142">                        List&lt;StudentRankingRecord&gt; rankedInThisSemester = new ArrayList&lt;&gt;();</span>
+<span class="nc bnc" id="L143" title="All 2 branches missed.">                        for (StudentRankingRecord r : listOfStudentRankingRecords) {</span>
+<span class="nc bnc" id="L144" title="All 2 branches missed.">                            if (!r.isFailed()) {</span>
+<span class="nc bnc" id="L145" title="All 2 branches missed.">                                if (Double.compare(r.percentage(), previousPercentage ) != 0) { currentRank ++; previousPercentage = r.percentage();</span>
                                 }
-<span class="fc" id="L147">                                rankedInThisSemester.add(new StudentRankingRecord(currentRank, r.studentId(), r.studentName(), r.section(), r.percentage(), r.semesterId(), r.departmentName(), false));</span>
+<span class="nc" id="L147">                                rankedInThisSemester.add(new StudentRankingRecord(currentRank, r.studentId(), r.studentName(), r.section(), r.percentage(), r.semesterId(), r.departmentName(), false));</span>
 <span class="nc" id="L148">                            }else{ rankedInThisSemester.add(new StudentRankingRecord(0, r.studentId(), r.studentName(), r.section(), r.percentage(), r.semesterId(), r.departmentName(), true));}</span>
-<span class="fc" id="L149">                        }</span>
-<span class="fc" id="L150">                        return rankedInThisSemester.stream();</span>
-<span class="fc" id="L151">                    }).sorted(Comparator.comparing(StudentRankingRecord::semesterId)).toList();</span>
+<span class="nc" id="L149">                        }</span>
+<span class="nc" id="L150">                        return rankedInThisSemester.stream();</span>
+<span class="nc" id="L151">                    }).sorted(Comparator.comparing(StudentRankingRecord::semesterId)).toList();</span>
 
-<span class="fc" id="L153">            List&lt;Map&lt;String, Object&gt;&gt; noRankedStudents = rankedStudentsAcrossSemesters.stream().map(r -&gt; { Map&lt;String, Object&gt; m = new LinkedHashMap&lt;&gt;();</span>
-<span class="pc bpc" id="L154" title="1 of 2 branches missed.">                        m.put(&quot;rank&quot;, r.rank() == 0 ? &quot;NA&quot; : String.valueOf(r.rank())); m.put(&quot;studentId&quot;, r.studentId()); m.put(&quot;studentName&quot;, r.studentName()); m.put(&quot;section&quot;, r.section()); m.put(&quot;percentage&quot;, r.percentage()); m.put(&quot;semesterId&quot;, r.semesterId()); m.put(&quot;departmentName&quot;, r.departmentName()); m.put(&quot;isFailed&quot;, r.isFailed());return m;</span>
-<span class="fc" id="L155">                    }).toList();</span>
-<span class="fc" id="L156">            return mapper.writeValueAsString(noRankedStudents);</span>
+<span class="nc" id="L153">            List&lt;Map&lt;String, Object&gt;&gt; noRankedStudents = rankedStudentsAcrossSemesters.stream().map(r -&gt; { Map&lt;String, Object&gt; m = new LinkedHashMap&lt;&gt;();</span>
+<span class="nc bnc" id="L154" title="All 2 branches missed.">                        m.put(&quot;rank&quot;, r.rank() == 0 ? &quot;NA&quot; : String.valueOf(r.rank())); m.put(&quot;studentId&quot;, r.studentId()); m.put(&quot;studentName&quot;, r.studentName()); m.put(&quot;section&quot;, r.section()); m.put(&quot;percentage&quot;, r.percentage()); m.put(&quot;semesterId&quot;, r.semesterId()); m.put(&quot;departmentName&quot;, r.departmentName()); m.put(&quot;isFailed&quot;, r.isFailed());return m;</span>
+<span class="nc" id="L155">                    }).toList();</span>
+<span class="nc" id="L156">            return mapper.writeValueAsString(noRankedStudents);</span>
 <span class="nc" id="L157">        }catch(JsonProcessingException e) {throw new RuntimeException(&quot;Exception Occurred while processing&quot; + e);</span>
         }
     }
@@ -163,26 +163,26 @@ import java.util.stream.Collectors;
      */
     public String getDepartmentWisePassPercentageDetails() {
         try {
-<span class="fc" id="L166">            List&lt;DepartmentPassPercentageRecord&gt; departmentPassPercentageRecordList = studentRepository.fetchDetailsForPassPercentage()</span>
-<span class="fc" id="L167">                    .stream().map(r -&gt; new DepartmentPassPercentageRecord(r[0].toString(), r[1].toString(), r[2].toString(), r[3].toString(), r[4].toString(), ((Number) r[5]).intValue()</span>
-<span class="fc" id="L168">                    )).toList();</span>
-<span class="fc" id="L169">            List&lt;PassPercentageReport&gt; passPercenatgeReportList = departmentPassPercentageRecordList</span>
-<span class="fc" id="L170">                    .stream().collect(Collectors.groupingBy(departmentPassPercentageRecord -&gt;</span>
-<span class="fc" id="L171">                            departmentPassPercentageRecord.departmentName() + &quot;|&quot; + departmentPassPercentageRecord.semesterId() + &quot;|&quot; + departmentPassPercentageRecord.subjectId() + &quot;|&quot; + departmentPassPercentageRecord.section()</span>
-<span class="fc" id="L172">                    )).entrySet().stream().map(departmentWisePassPercentageDetails -&gt; {</span>
-<span class="fc" id="L173">                        List&lt;DepartmentPassPercentageRecord&gt; departmentPassPercentageRecords = departmentWisePassPercentageDetails.getValue();</span>
-<span class="fc" id="L174">                        int totalStudents = departmentPassPercentageRecords.size();</span>
-<span class="fc" id="L175">                        int passedStudents = (int) departmentPassPercentageRecords.stream()</span>
-<span class="pc bpc" id="L176" title="1 of 2 branches missed.">                                .filter(departmentPassPercentageRecord -&gt; departmentPassPercentageRecord.marks() &gt;= 40)</span>
-<span class="fc" id="L177">                                .count();</span>
-<span class="pc bpc" id="L178" title="1 of 2 branches missed.">                        double percentage = totalStudents == 0 ? 0 : (passedStudents * 100.0) / totalStudents;</span>
-<span class="fc" id="L179">                        percentage = Math.round(percentage * 100.0) / 100.0;</span>
-<span class="fc" id="L180">                        DepartmentPassPercentageRecord first = departmentPassPercentageRecords.get(0);</span>
-<span class="fc" id="L181">                        return new PassPercentageReport(first.departmentName(), &quot;Semester &quot; + first.semesterId().replaceAll(&quot;\\D+&quot;, &quot;&quot;), first.subjectId(), first.subjectName(), first.section(), percentage);</span>
+<span class="nc" id="L166">            List&lt;DepartmentPassPercentageRecord&gt; departmentPassPercentageRecordList = studentRepository.fetchDetailsForPassPercentage()</span>
+<span class="nc" id="L167">                    .stream().map(r -&gt; new DepartmentPassPercentageRecord(r[0].toString(), r[1].toString(), r[2].toString(), r[3].toString(), r[4].toString(), ((Number) r[5]).intValue()</span>
+<span class="nc" id="L168">                    )).toList();</span>
+<span class="nc" id="L169">            List&lt;PassPercentageReport&gt; passPercenatgeReportList = departmentPassPercentageRecordList</span>
+<span class="nc" id="L170">                    .stream().collect(Collectors.groupingBy(departmentPassPercentageRecord -&gt;</span>
+<span class="nc" id="L171">                            departmentPassPercentageRecord.departmentName() + &quot;|&quot; + departmentPassPercentageRecord.semesterId() + &quot;|&quot; + departmentPassPercentageRecord.subjectId() + &quot;|&quot; + departmentPassPercentageRecord.section()</span>
+<span class="nc" id="L172">                    )).entrySet().stream().map(departmentWisePassPercentageDetails -&gt; {</span>
+<span class="nc" id="L173">                        List&lt;DepartmentPassPercentageRecord&gt; departmentPassPercentageRecords = departmentWisePassPercentageDetails.getValue();</span>
+<span class="nc" id="L174">                        int totalStudents = departmentPassPercentageRecords.size();</span>
+<span class="nc" id="L175">                        int passedStudents = (int) departmentPassPercentageRecords.stream()</span>
+<span class="nc bnc" id="L176" title="All 2 branches missed.">                                .filter(departmentPassPercentageRecord -&gt; departmentPassPercentageRecord.marks() &gt;= 40)</span>
+<span class="nc" id="L177">                                .count();</span>
+<span class="nc bnc" id="L178" title="All 2 branches missed.">                        double percentage = totalStudents == 0 ? 0 : (passedStudents * 100.0) / totalStudents;</span>
+<span class="nc" id="L179">                        percentage = Math.round(percentage * 100.0) / 100.0;</span>
+<span class="nc" id="L180">                        DepartmentPassPercentageRecord first = departmentPassPercentageRecords.get(0);</span>
+<span class="nc" id="L181">                        return new PassPercentageReport(first.departmentName(), &quot;Semester &quot; + first.semesterId().replaceAll(&quot;\\D+&quot;, &quot;&quot;), first.subjectId(), first.subjectName(), first.section(), percentage);</span>
                     })
-<span class="fc" id="L183">                    .sorted(Comparator.comparing(PassPercentageReport::departmentName).thenComparing(PassPercentageReport::semesterId).thenComparing(PassPercentageReport::subjectId).thenComparing(PassPercentageReport::section)</span>
-<span class="fc" id="L184">                    ).toList();</span>
-<span class="fc" id="L185">            return mapper.writeValueAsString(passPercenatgeReportList);</span>
+<span class="nc" id="L183">                    .sorted(Comparator.comparing(PassPercentageReport::departmentName).thenComparing(PassPercentageReport::semesterId).thenComparing(PassPercentageReport::subjectId).thenComparing(PassPercentageReport::section)</span>
+<span class="nc" id="L184">                    ).toList();</span>
+<span class="nc" id="L185">            return mapper.writeValueAsString(passPercenatgeReportList);</span>
 <span class="nc" id="L186">        } catch (JsonProcessingException e) {throw new RuntimeException(&quot;Exception Occurred while processing&quot; + e); }</span>
     }
 }

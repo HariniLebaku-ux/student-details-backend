@@ -17,7 +17,7 @@ import javax.validation.ConstraintViolationException;
  * and returns a custom ApiResponse with appropriate status codes.
  */
 @RestControllerAdvice
-<span class="fc" id="L20">public class GlobalExceptionHandler {</span>
+<span class="nc" id="L20">public class GlobalExceptionHandler {</span>
 
     /**
      * Handles database constraint violations such as:
@@ -28,16 +28,16 @@ import javax.validation.ConstraintViolationException;
      */
     @ExceptionHandler(DataIntegrityViolationException.class)
     public ResponseEntity&lt;ApiResponse&lt;Void&gt;&gt; handleDataIntegrityViolation(DataIntegrityViolationException ex) {
-<span class="fc" id="L31">        String msg=&quot;Invalid Data&quot;;</span>
+<span class="nc" id="L31">        String msg=&quot;Invalid Data&quot;;</span>
 
-<span class="fc" id="L33">        ApiResponse&lt;Void&gt; response = new ApiResponse&lt;&gt;(</span>
-<span class="fc" id="L34">            HttpStatus.BAD_REQUEST.value(),</span>
+<span class="nc" id="L33">        ApiResponse&lt;Void&gt; response = new ApiResponse&lt;&gt;(</span>
+<span class="nc" id="L34">            HttpStatus.BAD_REQUEST.value(),</span>
             msg
         );
 
-<span class="fc" id="L38">        return ResponseEntity</span>
-<span class="fc" id="L39">                .status(HttpStatus.BAD_REQUEST)</span>
-<span class="fc" id="L40">                .body(response);</span>
+<span class="nc" id="L38">        return ResponseEntity</span>
+<span class="nc" id="L39">                .status(HttpStatus.BAD_REQUEST)</span>
+<span class="nc" id="L40">                .body(response);</span>
     }
 
     /**
@@ -50,68 +50,68 @@ import javax.validation.ConstraintViolationException;
      */
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity&lt;ApiResponse&lt;Void&gt;&gt; handleMethodArgumentViolation(MethodArgumentNotValidException ex) {
-<span class="fc" id="L53">        String msg=&quot;Invalid Data&quot;;</span>
+<span class="nc" id="L53">        String msg=&quot;Invalid Data&quot;;</span>
 
-<span class="fc" id="L55">        ApiResponse&lt;Void&gt; response = new ApiResponse&lt;&gt;(</span>
-<span class="fc" id="L56">            HttpStatus.BAD_REQUEST.value(),</span>
+<span class="nc" id="L55">        ApiResponse&lt;Void&gt; response = new ApiResponse&lt;&gt;(</span>
+<span class="nc" id="L56">            HttpStatus.BAD_REQUEST.value(),</span>
             msg
         );
 
-<span class="fc" id="L60">        return ResponseEntity</span>
-<span class="fc" id="L61">                .status(HttpStatus.BAD_REQUEST)</span>
-<span class="fc" id="L62">                .body(response);</span>
+<span class="nc" id="L60">        return ResponseEntity</span>
+<span class="nc" id="L61">                .status(HttpStatus.BAD_REQUEST)</span>
+<span class="nc" id="L62">                .body(response);</span>
     }
 
     @ExceptionHandler(JsonProcessingException.class)
     public ResponseEntity&lt;ApiResponse&lt;Void&gt;&gt; handleJsonProcessingException(JsonProcessingException ex) {
-<span class="fc" id="L67">        String msg=&quot;Error while processing Json record&quot;;</span>
+<span class="nc" id="L67">        String msg=&quot;Error while processing Json record&quot;;</span>
 
-<span class="fc" id="L69">        ApiResponse&lt;Void&gt; response = new ApiResponse&lt;&gt;(</span>
-<span class="fc" id="L70">                HttpStatus.INTERNAL_SERVER_ERROR.value(),</span>
+<span class="nc" id="L69">        ApiResponse&lt;Void&gt; response = new ApiResponse&lt;&gt;(</span>
+<span class="nc" id="L70">                HttpStatus.INTERNAL_SERVER_ERROR.value(),</span>
                 msg
         );
-<span class="fc" id="L73">        return ResponseEntity</span>
-<span class="fc" id="L74">                .status(HttpStatus.INTERNAL_SERVER_ERROR)</span>
-<span class="fc" id="L75">                .body(response);</span>
+<span class="nc" id="L73">        return ResponseEntity</span>
+<span class="nc" id="L74">                .status(HttpStatus.INTERNAL_SERVER_ERROR)</span>
+<span class="nc" id="L75">                .body(response);</span>
     }
 
     @ExceptionHandler(RuntimeException.class)
     public ResponseEntity&lt;ApiResponse&lt;Void&gt;&gt; handleRuntimeException(RuntimeException ex) {
-<span class="fc" id="L80">        String msg=&quot;Error while processing input request&quot;;</span>
+<span class="nc" id="L80">        String msg=&quot;Error while processing input request&quot;;</span>
 
-<span class="fc" id="L82">        ApiResponse&lt;Void&gt; response = new ApiResponse&lt;&gt;(</span>
-<span class="fc" id="L83">                HttpStatus.INTERNAL_SERVER_ERROR.value(),</span>
+<span class="nc" id="L82">        ApiResponse&lt;Void&gt; response = new ApiResponse&lt;&gt;(</span>
+<span class="nc" id="L83">                HttpStatus.INTERNAL_SERVER_ERROR.value(),</span>
                 msg
         );
-<span class="fc" id="L86">        return ResponseEntity</span>
-<span class="fc" id="L87">                .status(HttpStatus.INTERNAL_SERVER_ERROR)</span>
-<span class="fc" id="L88">                .body(response);</span>
+<span class="nc" id="L86">        return ResponseEntity</span>
+<span class="nc" id="L87">                .status(HttpStatus.INTERNAL_SERVER_ERROR)</span>
+<span class="nc" id="L88">                .body(response);</span>
     }
 
     @ExceptionHandler(ConstraintViolationException.class)
     public ResponseEntity&lt;ApiResponse&lt;Void&gt;&gt; handleConstraintViolationException(ConstraintViolationException ex) {
-<span class="fc" id="L93">        String msg=&quot;Invalid DepartmentId&quot;;</span>
+<span class="nc" id="L93">        String msg=&quot;Invalid DepartmentId&quot;;</span>
 
-<span class="fc" id="L95">        ApiResponse&lt;Void&gt; response = new ApiResponse&lt;&gt;(</span>
-<span class="fc" id="L96">                HttpStatus.BAD_REQUEST.value(),</span>
+<span class="nc" id="L95">        ApiResponse&lt;Void&gt; response = new ApiResponse&lt;&gt;(</span>
+<span class="nc" id="L96">                HttpStatus.BAD_REQUEST.value(),</span>
                 msg
         );
-<span class="fc" id="L99">        return ResponseEntity</span>
-<span class="fc" id="L100">                .status(HttpStatus.BAD_REQUEST)</span>
-<span class="fc" id="L101">                .body(response);</span>
+<span class="nc" id="L99">        return ResponseEntity</span>
+<span class="nc" id="L100">                .status(HttpStatus.BAD_REQUEST)</span>
+<span class="nc" id="L101">                .body(response);</span>
     }
 
 
     @ExceptionHandler(StudentAlreadyExistsException.class)
     public ResponseEntity&lt;ApiResponse&lt;Void&gt;&gt; handleStudentExists(StudentAlreadyExistsException ex) {
 
-<span class="fc" id="L108">        ApiResponse&lt;Void&gt; body = new ApiResponse&lt;&gt;(</span>
-<span class="fc" id="L109">                HttpStatus.CONFLICT.value(),</span>
-<span class="fc" id="L110">                ex.getMessage()</span>
+<span class="nc" id="L108">        ApiResponse&lt;Void&gt; body = new ApiResponse&lt;&gt;(</span>
+<span class="nc" id="L109">                HttpStatus.CONFLICT.value(),</span>
+<span class="nc" id="L110">                ex.getMessage()</span>
         );
-<span class="fc" id="L112">        return ResponseEntity</span>
-<span class="fc" id="L113">                .status(HttpStatus.CONFLICT)</span>
-<span class="fc" id="L114">                .body(body); // 409</span>
+<span class="nc" id="L112">        return ResponseEntity</span>
+<span class="nc" id="L113">                .status(HttpStatus.CONFLICT)</span>
+<span class="nc" id="L114">                .body(body); // 409</span>
     }
 
 }

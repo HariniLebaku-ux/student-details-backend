@@ -1,5 +1,6 @@
 package com.pip.studentdetails.backend.service;
 
+import com.pip.studentdetails.backend.exception.StudentAlreadyExistsException;
 import com.pip.studentdetails.backend.repository.StudentDetailsRepository;
 import com.pip.studentdetails.backend.repository.StudentRepository;
 import com.pip.studentdetails.backend.request.StudentDetailsRequest;
@@ -14,8 +15,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
 class StudentBackendServiceImplTest {
@@ -40,6 +40,24 @@ class StudentBackendServiceImplTest {
     void createStudent_NullPointerException() {
         assertThrows(NullPointerException.class, 
                 () -> studentBackendServiceImpl.createStudent(null));
+    }
+
+    @Test
+    void createStudent_shouldThrowStudentAlreadyExistsException_whenStudentIdExists() {
+
+        StudentRequest request = new StudentRequest("ST_003", "Zoro", "DEPT_CS", "A");
+        when(studentRepository.existsById("ST_003")).thenReturn(true);
+
+        StudentAlreadyExistsException ex = assertThrows(StudentAlreadyExistsException.class,
+                () -> studentBackendServiceImpl.createStudent(request),
+                "Expected createStudent to throw when studentId already exists"
+        );
+        assertEquals("Student with id ST_003 already exists", ex.getMessage());
+
+        verify(studentRepository, times(1)).existsById("ST_003");
+        verify(studentRepository, never()).insertStudent(anyString(), anyString(), anyString(), anyString());
+        verifyNoInteractions(studentDetailsRepository);
+        verifyNoMoreInteractions(studentRepository);
     }
 
     @Test
