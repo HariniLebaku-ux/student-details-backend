@@ -63,4 +63,11 @@ public class StudentDetails {
     public void setMarks(Integer marks) {
         this.marks = marks;
     }
+
+    public StudentDetails(StudentDetailsId id, Student student, Subject subject, Integer marks) {
+        this.id = id;
+        this.student = student;
+        this.subject = subject;
+        this.marks = marks;
+    }
 }

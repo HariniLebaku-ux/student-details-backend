@@ -76,8 +76,9 @@ public class Student {
     /**
      * Convenience constructor to create a Student object.
      */
-    public Student(String studentId, Department departmentId, String sectionId) {
+    public Student(String studentId, String studentName,Department departmentId, String sectionId) {
         this.studentId = studentId;
+        this.studentName = studentName;
         this.departmentId = departmentId;
         this.sectionId = sectionId;
     }

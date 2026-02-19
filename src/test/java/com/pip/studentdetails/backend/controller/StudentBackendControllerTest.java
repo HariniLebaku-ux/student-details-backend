@@ -108,7 +108,7 @@ class StudentBackendControllerTest {
 
     @Test
     void createStudentDetailsSuccess() throws Exception {
-        StudentDetailsRequest request = new StudentDetailsRequest("ST_001", "SUB_001", "John",100);
+        StudentDetailsRequest request = new StudentDetailsRequest("ST_001", "SUB_001",100);
         Mockito.doNothing()
                 .when(studentBackendService)
                 .createStudentDetails(Mockito.any());
@@ -121,7 +121,7 @@ class StudentBackendControllerTest {
 
     @Test
     void createStudentDetailsValidationFailure() throws Exception {
-        StudentDetailsRequest request = new StudentDetailsRequest(null, null, null,null);
+        StudentDetailsRequest request = new StudentDetailsRequest(null, null,null);
         Mockito.doNothing()
                 .when(studentBackendService)
                 .createStudentDetails(Mockito.any());
@@ -134,7 +134,7 @@ class StudentBackendControllerTest {
 
     @Test
     void createStudentDetailsDataIntegrityViolationFailure() throws Exception {
-        StudentDetailsRequest request = new StudentDetailsRequest("ST_001", "SUB_001", "John",100);
+        StudentDetailsRequest request = new StudentDetailsRequest("ST_001", "SUB_001", 100);
         Mockito.doThrow(new DataIntegrityViolationException("Primarykey Violation - ST_001, SUB_001 is already available"))
                 .when(studentBackendService)
                 .createStudentDetails(Mockito.any());
@@ -147,7 +147,7 @@ class StudentBackendControllerTest {
 
     @Test
     void createStudentDetailsInternalServerErrorFailure() throws Exception {
-        StudentDetailsRequest request = new StudentDetailsRequest("ST_001", "SUB_001", "John",100);
+        StudentDetailsRequest request = new StudentDetailsRequest("ST_001", "SUB_001", 100);
         Mockito.doThrow(new RuntimeException("Exception Occurred"))
                 .when(studentBackendService)
                 .createStudentDetails(Mockito.any());

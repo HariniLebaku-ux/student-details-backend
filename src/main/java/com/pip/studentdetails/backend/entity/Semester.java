@@ -18,7 +18,7 @@
       */
      @Id
      @Column(name = "semester_id", nullable = false)
-     private Long semesterId; // BIGINT
+     private String semesterId; // BIGINT
 
      /**
       * Name of the semester (e.g., "Semester 1", "Spring 2026").
@@ -39,12 +39,12 @@
      public Semester() {}
 
      /** @return the semester ID */
-     public Long getSemesterId() {
+     public String getSemesterId() {
          return semesterId;
      }
 
      /** @param semesterId sets the semester ID */
-     public void setSemesterId(Long semesterId) {
+     public void setSemesterId(String semesterId) {
          this.semesterId = semesterId;
      }
 
@@ -75,7 +75,7 @@
       * @param semesterName Display name of the semester
       * @param subjects     Set of subjects mapped to this semester
       */
-     public Semester(Long semesterId, String semesterName, Set<Subject> subjects) {
+     public Semester(String semesterId, String semesterName, Set<Subject> subjects) {
          this.semesterId = semesterId;
          this.semesterName = semesterName;
          this.subjects = subjects;

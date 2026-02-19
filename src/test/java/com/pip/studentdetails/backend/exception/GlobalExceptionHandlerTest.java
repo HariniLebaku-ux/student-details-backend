@@ -13,6 +13,8 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import javax.validation.ConstraintViolationException;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.Mockito.mock;
 
 class GlobalExceptionHandlerTest {
@@ -82,4 +84,19 @@ class GlobalExceptionHandlerTest {
         assertThat(response.getBody()).isNotNull();
         assertThat(response.getBody().status()).isEqualTo(400);
     }
+
+
+    @Test
+    void handleStudentExists_ShouldReturns409WithMessage() {
+        GlobalExceptionHandler handler = new GlobalExceptionHandler();
+        StudentAlreadyExistsException ex = new StudentAlreadyExistsException("Student with id ST_090 already exists");
+
+        ResponseEntity<ApiResponse<Void>> resp = handler.handleStudentExists(ex);
+
+        assertEquals(HttpStatus.CONFLICT, resp.getStatusCode()); // 409
+        assertNotNull(resp.getBody());
+        assertEquals(409, resp.getBody().status());
+        assertEquals("Student with id ST_090 already exists", resp.getBody().message());
+    }
+
 }

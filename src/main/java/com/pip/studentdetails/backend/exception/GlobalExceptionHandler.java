@@ -101,4 +101,17 @@ public class GlobalExceptionHandler {
                 .body(response);
     }
 
+
+    @ExceptionHandler(StudentAlreadyExistsException.class)
+    public ResponseEntity<ApiResponse<Void>> handleStudentExists(StudentAlreadyExistsException ex) {
+
+        ApiResponse<Void> body = new ApiResponse<>(
+                HttpStatus.CONFLICT.value(),
+                ex.getMessage()
+        );
+        return ResponseEntity
+                .status(HttpStatus.CONFLICT)
+                .body(body); // 409
+    }
+
 }

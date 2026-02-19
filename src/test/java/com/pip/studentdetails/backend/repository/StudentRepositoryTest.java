@@ -4,10 +4,11 @@ package com.pip.studentdetails.backend.repository;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
-import com.pip.studentdetails.backend.entity.Department;
-import com.pip.studentdetails.backend.entity.Student;
+import com.pip.studentdetails.backend.entity.*;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
@@ -57,6 +58,29 @@ class StudentRepositoryTest {
 
     @Test
     void fetchStudentMarksForTopper_Success() {
+        Department department = new Department();
+
+        department.setDepartmentId("DEPT_CS");
+        department.setDepartmentName("Computer Science and Engineering");
+        testEntityManager.persist(department);
+
+        Student student = new Student("ST_001", "John",department, "A");
+        testEntityManager.persist(student);
+
+        StudentDetailsId studentDetailsId = new StudentDetailsId("ST_001", "SUB_002");
+        //testEntityManager.persist(studentDetailsId);
+        Set<Subject> subjects1 = new HashSet<>();
+        Semester semester = new Semester("SEM1", "Semester One",subjects1);
+        testEntityManager.persist(semester);
+        Subject subject = new Subject("SUB_001", "physics",semester);
+
+        Set<Subject> subjects = new HashSet<>();
+        subjects.add(subject);
+        testEntityManager.persist(subject);
+
+        StudentDetails studentDetails = new StudentDetails(studentDetailsId, student, subject,100);
+        testEntityManager.persist(studentDetails);
+
         List<Object[]> departmentTopperMarksList = repository.fetchStudentMarksForTopper("DEPT_CS");
 
         assertThat(departmentTopperMarksList).isNotEmpty();

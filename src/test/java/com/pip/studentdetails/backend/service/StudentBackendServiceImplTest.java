@@ -44,7 +44,7 @@ class StudentBackendServiceImplTest {
 
     @Test
     void createStudentDetails_Success() {
-        StudentDetailsRequest request = new StudentDetailsRequest("ST_001", "SUB_001","John", 90);
+        StudentDetailsRequest request = new StudentDetailsRequest("ST_001", "SUB_001", 90);
         studentBackendServiceImpl.createStudentDetails(request);
         verify(studentDetailsRepository).insertStudentDetails("ST_001", "SUB_001", 90);
     }

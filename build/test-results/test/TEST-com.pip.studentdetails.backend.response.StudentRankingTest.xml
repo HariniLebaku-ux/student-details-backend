@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.pip.studentdetails.backend.response.StudentRankingTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-02-17T21:20:59" hostname="BDC6-L-141HVWQ" time="0.024">
+<testsuite name="com.pip.studentdetails.backend.response.StudentRankingTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-02-19T08:55:08" hostname="BDC6-L-141HVWQ" time="0.03">
   <properties/>
-  <testcase name="toStringShouldContainFieldNamesAndValues()" classname="com.pip.studentdetails.backend.response.StudentRankingTest" time="0.015"/>
-  <testcase name="negativeMarksAreAllowedUnlessYouValidateElsewhere()" classname="com.pip.studentdetails.backend.response.StudentRankingTest" time="0.001"/>
-  <testcase name="equalsAndHashCodeShouldWorkForSameValues()" classname="com.pip.studentdetails.backend.response.StudentRankingTest" time="0.002"/>
-  <testcase name="equalsShouldDifferForDifferentValues()" classname="com.pip.studentdetails.backend.response.StudentRankingTest" time="0.0"/>
+  <testcase name="toStringShouldContainFieldNamesAndValues()" classname="com.pip.studentdetails.backend.response.StudentRankingTest" time="0.018"/>
+  <testcase name="negativeMarksAreAllowedUnlessYouValidateElsewhere()" classname="com.pip.studentdetails.backend.response.StudentRankingTest" time="0.0"/>
+  <testcase name="equalsAndHashCodeShouldWorkForSameValues()" classname="com.pip.studentdetails.backend.response.StudentRankingTest" time="0.003"/>
+  <testcase name="equalsShouldDifferForDifferentValues()" classname="com.pip.studentdetails.backend.response.StudentRankingTest" time="0.002"/>
   <testcase name="nullStringsAreAllowedUnlessValidatedElsewhere()" classname="com.pip.studentdetails.backend.response.StudentRankingTest" time="0.001"/>
   <testcase name="shouldCreateRecordAndExposeValues()" classname="com.pip.studentdetails.backend.response.StudentRankingTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>

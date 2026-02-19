@@ -2,6 +2,7 @@ package com.pip.studentdetails.backend.service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.pip.studentdetails.backend.exception.StudentAlreadyExistsException;
 import com.pip.studentdetails.backend.repository.StudentDetailsRepository;
 import com.pip.studentdetails.backend.repository.StudentRepository;
 import com.pip.studentdetails.backend.request.StudentDetailsRequest;
@@ -39,6 +40,11 @@ public class StudentBackendServiceImpl implements StudentBackendService {
      */
     @Override
     public void createStudent(StudentRequest studentRequest) {
+
+        if (studentRepository.existsById(studentRequest.studentId())) {
+            throw new StudentAlreadyExistsException(
+                    "Student with id " + studentRequest.studentId() + " already exists");
+        }
         // Passing record values to repository insert method
         studentRepository.insertStudent(studentRequest.studentId(),studentRequest.studentName(),studentRequest.departmentId(),studentRequest.sectionId());
     }

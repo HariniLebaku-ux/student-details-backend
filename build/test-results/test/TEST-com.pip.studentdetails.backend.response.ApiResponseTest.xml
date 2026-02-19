@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.pip.studentdetails.backend.response.ApiResponseTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-02-17T21:20:59" hostname="BDC6-L-141HVWQ" time="0.036">
+<testsuite name="com.pip.studentdetails.backend.response.ApiResponseTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-02-19T08:55:07" hostname="BDC6-L-141HVWQ" time="0.078">
   <properties/>
-  <testcase name="Null message should be accepted and preserved" classname="com.pip.studentdetails.backend.response.ApiResponseTest" time="0.0"/>
-  <testcase name="Equality should be structural (same components) and hashCode should match" classname="com.pip.studentdetails.backend.response.ApiResponseTest" time="0.028"/>
-  <testcase name="Record should work with different generic types at compile-time" classname="com.pip.studentdetails.backend.response.ApiResponseTest" time="0.0"/>
-  <testcase name="toString should contain component names and values" classname="com.pip.studentdetails.backend.response.ApiResponseTest" time="0.004"/>
-  <testcase name="Accessors should return constructor values" classname="com.pip.studentdetails.backend.response.ApiResponseTest" time="0.001"/>
+  <testcase name="Null message should be accepted and preserved" classname="com.pip.studentdetails.backend.response.ApiResponseTest" time="0.002"/>
+  <testcase name="Equality should be structural (same components) and hashCode should match" classname="com.pip.studentdetails.backend.response.ApiResponseTest" time="0.059"/>
+  <testcase name="Record should work with different generic types at compile-time" classname="com.pip.studentdetails.backend.response.ApiResponseTest" time="0.001"/>
+  <testcase name="toString should contain component names and values" classname="com.pip.studentdetails.backend.response.ApiResponseTest" time="0.007"/>
+  <testcase name="Accessors should return constructor values" classname="com.pip.studentdetails.backend.response.ApiResponseTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

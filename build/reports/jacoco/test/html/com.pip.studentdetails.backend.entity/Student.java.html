@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Student.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">studentdetails</a> &gt; <a href="index.source.html" class="el_package">com.pip.studentdetails.backend.entity</a> &gt; <span class="el_source">Student.java</span></div><h1>Student.java</h1><pre class="source lang-java linenums">package com.pip.studentdetails.backend.entity;
+
+import javax.persistence.*;
+/**
+ * JPA entity that maps to the &quot;student_core.student&quot; table.
+ * Represents a student and their associated department and section.
+ */
+@Entity
+@Table(name = &quot;student&quot;)
+public class Student {
+
+    /**
+     * Primary key for the student table. Mapped to column &quot;student_id&quot;.
+     */
+    @Id
+    @Column(name = &quot;student_id&quot;, nullable = false)
+    private String studentId;
+
+    @Column(name = &quot;student_name&quot;, nullable = false)
+    private String studentName;
+
+    /**
+     * department_id is fetch from the department table.
+     */
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @JoinColumn(name = &quot;department_id&quot;, nullable = false)
+    private Department departmentId;
+
+    /**
+     * Section identifier for the student (e.g., &quot;A&quot;, &quot;B&quot;, &quot;C&quot;). Mapped to column &quot;section&quot;.
+     * The Java field name is sectionId, but the DB column is &quot;section&quot;.
+     */
+    @Column(name = &quot;section&quot;, nullable = false)
+    private String sectionId;
+
+    /**
+     * Default constructor required by JPA.
+     */
+<span class="nc" id="L39">    public Student() {}</span>
+
+    /** @return the student ID */
+    public String getStudentId() {
+<span class="nc" id="L43">        return studentId;</span>
+    }
+
+    /** @param studentId sets the student ID */
+    public void setStudentId(String studentId) {
+<span class="nc" id="L48">        this.studentId = studentId;</span>
+<span class="nc" id="L49">    }</span>
+
+<span class="nc" id="L51">    public String getStudentName() {return studentName;}</span>
+
+<span class="nc" id="L53">    public void setStudentName(String studentName) {this.studentName = studentName;</span>
+<span class="nc" id="L54">    }</span>
+
+    /**@return the Department entity linked to this student*/
+    public Department getDepartmentId() {
+<span class="nc" id="L58">        return departmentId;</span>
+    }
+
+    /** @param departmentId sets the department association */
+    public void setDepartmentId(Department departmentId) {
+<span class="nc" id="L63">        this.departmentId = departmentId;</span>
+<span class="nc" id="L64">    }</span>
+
+    /** @return the section identifier */
+    public String getSectionId() {
+<span class="nc" id="L68">        return sectionId;</span>
+    }
+
+    /** @param sectionId sets the section identifier */
+    public void setSectionId(String sectionId) {
+<span class="nc" id="L73">        this.sectionId = sectionId;</span>
+<span class="nc" id="L74">    }</span>
+
+    /**
+     * Convenience constructor to create a Student object.
+     */
+<span class="nc" id="L79">    public Student(String studentId, String studentName,Department departmentId, String sectionId) {</span>
+<span class="nc" id="L80">        this.studentId = studentId;</span>
+<span class="nc" id="L81">        this.studentName = studentName;</span>
+<span class="nc" id="L82">        this.departmentId = departmentId;</span>
+<span class="nc" id="L83">        this.sectionId = sectionId;</span>
+<span class="nc" id="L84">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

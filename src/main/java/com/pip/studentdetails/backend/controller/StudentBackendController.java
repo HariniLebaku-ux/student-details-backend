@@ -36,9 +36,7 @@ public class StudentBackendController {
     }
 
     /**
-     * Creates a new student record in the database student backend
-     * @param studentRequest Request DTO containing studentId, departmentId and sectionId.
-     * @return ResponseEntity with ApiResponse and CREATED status.
+     * Insert the student data to DB using below Post api from backend
      */
     @PostMapping("/create-student")
     public ResponseEntity<ApiResponse<Void>> createStudent(@Valid @RequestBody StudentRequest studentRequest) {
