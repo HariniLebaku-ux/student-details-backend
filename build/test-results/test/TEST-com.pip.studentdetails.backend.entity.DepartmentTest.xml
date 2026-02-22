@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.pip.studentdetails.backend.entity.DepartmentTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-02-22T21:11:27" hostname="BDC6-L-141HVWQ" time="0.037">
+<testsuite name="com.pip.studentdetails.backend.entity.DepartmentTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-02-22T21:23:19" hostname="BDC6-L-141HVWQ" time="0.041">
   <properties/>
-  <testcase name="convenienceCtor()" classname="com.pip.studentdetails.backend.entity.DepartmentTest" time="0.036"/>
-  <testcase name="defaultCtor_success()" classname="com.pip.studentdetails.backend.entity.DepartmentTest" time="0.0"/>
+  <testcase name="convenienceCtor()" classname="com.pip.studentdetails.backend.entity.DepartmentTest" time="0.038"/>
+  <testcase name="defaultCtor_success()" classname="com.pip.studentdetails.backend.entity.DepartmentTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

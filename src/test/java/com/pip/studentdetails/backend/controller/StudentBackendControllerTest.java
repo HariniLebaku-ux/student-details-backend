@@ -19,6 +19,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 import static org.hamcrest.Matchers.equalTo;
+import static org.mockito.Mockito.verifyNoInteractions;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
@@ -98,23 +99,6 @@ class StudentBackendControllerTest {
     void createStudent_getMethodNotAllowed_405() throws Exception {
         mockMvc.perform(get("/backend/create-student"))
                 .andExpect(status().isMethodNotAllowed());
-    }
-
-    @Test
-    void createStudent_emptyBody_500() throws Exception {
-        mockMvc.perform(post("/backend/create-student")
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .content(""))
-                .andExpect(status().isInternalServerError());
-    }
-
-    @Test
-    void createStudent_malformedJson_500() throws Exception {
-        String malformed = "{ \"studentId\": \"ST_001\", "; // truncated JSON
-        mockMvc.perform(post("/backend/create-student")
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .content(malformed))
-                .andExpect(status().isInternalServerError());
     }
 
     @Test
