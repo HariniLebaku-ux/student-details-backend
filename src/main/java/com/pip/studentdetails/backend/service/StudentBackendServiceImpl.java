@@ -158,9 +158,7 @@ public class StudentBackendServiceImpl implements StudentBackendService {
         }
     }
 
-    /*
-     * Fetch the details from student table for department-wise pass percentage
-     */
+    /**Fetch the details from student table for department-wise pass percentage*/
     public String getDepartmentWisePassPercentageDetails() {
         try {
             List<DepartmentPassPercentageRecord> departmentPassPercentageRecordList = studentRepository.fetchDetailsForPassPercentage()
