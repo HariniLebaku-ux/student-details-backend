@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.pip.studentdetails.backend.entity.StudentTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-02-22T21:23:19" hostname="BDC6-L-141HVWQ" time="0.003">
+<testsuite name="com.pip.studentdetails.backend.entity.StudentTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-02-22T21:45:35" hostname="BDC6-L-141HVWQ" time="0.003">
   <properties/>
   <testcase name="studentDefaultConstructor_success()" classname="com.pip.studentdetails.backend.entity.StudentTest" time="0.001"/>
   <testcase name="StudentNullDetails_Failure()" classname="com.pip.studentdetails.backend.entity.StudentTest" time="0.001"/>

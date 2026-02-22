@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.pip.studentdetails.backend.response.DepartmentPassPercentageRecordTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2026-02-22T21:23:27" hostname="BDC6-L-141HVWQ" time="0.032">
+<testsuite name="com.pip.studentdetails.backend.response.DepartmentPassPercentageRecordTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2026-02-22T21:45:46" hostname="BDC6-L-141HVWQ" time="0.022">
   <properties/>
-  <testcase name="toString() should include field names and values" classname="com.pip.studentdetails.backend.response.DepartmentPassPercentageRecordTest" time="0.024"/>
+  <testcase name="toString() should include field names and values" classname="com.pip.studentdetails.backend.response.DepartmentPassPercentageRecordTest" time="0.017"/>
   <testcase name="Accessor methods should return constructor values" classname="com.pip.studentdetails.backend.response.DepartmentPassPercentageRecordTest" time="0.0"/>
   <testcase name="Record equality and hashCode should be structural" classname="com.pip.studentdetails.backend.response.DepartmentPassPercentageRecordTest" time="0.002"/>
-  <testcase name="Null values should be stored for reference types" classname="com.pip.studentdetails.backend.response.DepartmentPassPercentageRecordTest" time="0.001"/>
+  <testcase name="Null values should be stored for reference types" classname="com.pip.studentdetails.backend.response.DepartmentPassPercentageRecordTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
