@@ -26,13 +26,13 @@ public class Department {
     /**
      * One-to-Many relationship, One department can have multiple students.
      * */
-<span class="nc" id="L29">    @OneToMany(mappedBy = &quot;departmentId&quot;, cascade = CascadeType.ALL, orphanRemoval = false)</span>
+<span class="pc" id="L29">    @OneToMany(mappedBy = &quot;departmentId&quot;, cascade = CascadeType.ALL, orphanRemoval = false)</span>
     private Set&lt;Student&gt; students = new LinkedHashSet&lt;&gt;();
 
     /**
      * Default constructor (required by JPA).
      */
-<span class="nc" id="L35">    public Department() {}</span>
+<span class="fc" id="L35">    public Department() {}</span>
 
     /**
      * Convenience constructor to create Department object quickly.

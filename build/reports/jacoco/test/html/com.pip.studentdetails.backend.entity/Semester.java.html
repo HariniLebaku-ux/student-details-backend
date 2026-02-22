@@ -30,13 +30,13 @@
       * Subjects offered in this semester.
       * LinkedHashSet is used to preserve insertion order and avoid duplicates.
       */
-<span class="nc" id="L33">     @OneToMany(mappedBy = &quot;semester&quot;, cascade = CascadeType.ALL, orphanRemoval = false)</span>
+<span class="pc" id="L33">     @OneToMany(mappedBy = &quot;semester&quot;, cascade = CascadeType.ALL, orphanRemoval = false)</span>
      private Set&lt;Subject&gt; subjects = new LinkedHashSet&lt;&gt;();
 
      /**
       * Default constructor required by JPA.
       */
-<span class="nc" id="L39">     public Semester() {}</span>
+<span class="fc" id="L39">     public Semester() {}</span>
 
      /** @return the semester ID */
      public String getSemesterId() {

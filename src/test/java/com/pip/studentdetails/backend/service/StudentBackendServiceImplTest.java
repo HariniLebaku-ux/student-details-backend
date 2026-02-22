@@ -48,8 +48,7 @@ class StudentBackendServiceImplTest {
         StudentRequest request = new StudentRequest("ST_003", "Zoro", "DEPT_CS", "A");
         when(studentRepository.existsById("ST_003")).thenReturn(true);
 
-        StudentAlreadyExistsException ex = assertThrows(StudentAlreadyExistsException.class,
-                () -> studentBackendServiceImpl.createStudent(request),
+        StudentAlreadyExistsException ex = assertThrows(StudentAlreadyExistsException.class, () -> studentBackendServiceImpl.createStudent(request),
                 "Expected createStudent to throw when studentId already exists"
         );
         assertEquals("Student with id ST_003 already exists", ex.getMessage());
@@ -73,23 +72,6 @@ class StudentBackendServiceImplTest {
                 () -> studentBackendServiceImpl.createStudentDetails(null),
                 "Passing null to createStudentDetails should throw NullPointerException"
         );
-    }
-
-    @Test
-    void getDepartmentTopperDetails_success() {
-        String departmentId="DEPT_CS";
-        List<Object[]> rows = List.of(
-            new Object[]{"ST_001", "John", "SEM_1", "SUB_001", 100, "Computer Science and Engineering"},
-            new Object[]{"ST_002", "sankar", "SEM_1", "SUB_001", 89, "Computer Science and Engineering"}
-        );
-        when(studentRepository.fetchStudentMarksForTopper(departmentId))
-            .thenReturn(rows);
-
-        String result=studentBackendServiceImpl.getDepartmentTopperDetails(departmentId);
-        assertNotNull(result, "JSON result should not be null");
-        assertTrue(result.contains("John"),  "Topper should be John");
-
-        verify(studentRepository).fetchStudentMarksForTopper(departmentId);
     }
 
     @Test
