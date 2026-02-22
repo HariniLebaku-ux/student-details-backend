@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <testsuite name="com.pip.studentdetails.backend.config.RestTemplateConfigTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-02-22T22:07:38" hostname="BDC6-L-141HVWQ" time="5.068">
   <properties/>
   <testcase name="testRestTemplateBeanCreation()" classname="com.pip.studentdetails.backend.config.RestTemplateConfigTest" time="5.068"/>
@@ -12,6 +13,21 @@
 03:37:40.777 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'restTemplateConfig'
 03:37:40.796 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'restTemplate'
 03:37:43.056 [Test worker] DEBUG org.springframework.context.annotation.AnnotationConfigApplicationContext - Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@49293b43, started on Mon Feb 23 03:37:39 IST 2026
+=======
+<testsuite name="com.pip.studentdetails.backend.config.RestTemplateConfigTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-02-22T21:45:15" hostname="BDC6-L-141HVWQ" time="5.67">
+  <properties/>
+  <testcase name="testRestTemplateBeanCreation()" classname="com.pip.studentdetails.backend.config.RestTemplateConfigTest" time="5.67"/>
+  <system-out><![CDATA[03:15:17.775 [Test worker] DEBUG org.springframework.context.annotation.AnnotationConfigApplicationContext - Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@bc0f53b
+03:15:18.035 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+03:15:18.974 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerProcessor'
+03:15:18.990 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerFactory'
+03:15:19.002 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+03:15:19.016 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+03:15:19.048 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalPersistenceAnnotationProcessor'
+03:15:19.086 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'restTemplateConfig'
+03:15:19.107 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'restTemplate'
+03:15:21.255 [Test worker] DEBUG org.springframework.context.annotation.AnnotationConfigApplicationContext - Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@bc0f53b, started on Mon Feb 23 03:15:17 IST 2026
+>>>>>>> e95222cb62b9fce4b467f4f08347e56624851f27
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

@@ -31,32 +31,32 @@ class StudentDetailsRepositoryTest {
     @BeforeEach
     void setUpFkRows() {
         // 0) Ensure Department exists
-        Department dept = testEntityManager.find(Department.class, "DEPT_IT");
-        if (dept == null) {
-            dept = new Department();
-            dept.setDepartmentId("DEPT_IT");           // PK
-            dept.setDepartmentName("Information Tech"); // set NOT NULL columns
-            testEntityManager.persist(dept);
+        Department department = testEntityManager.find(Department.class, "DEPT_IT");
+        if (department == null) {
+            department = new Department();
+            department.setDepartmentId("DEPT_IT");           // PK
+            department.setDepartmentName("Information Tech"); // set NOT NULL columns
+            testEntityManager.persist(department);
         }
 
         // 1) Ensure Student exists with all NOT NULL fields
-        Student s = testEntityManager.find(Student.class, STUDENT_ID);
-        if (s == null) {
-            s = new Student();
-            s.setStudentId(STUDENT_ID);
-            s.setStudentName("Test Student"); // NOT NULL
-            s.setSectionId("A");                // NOT NULL -> was missing earlier
-            s.setDepartmentId(dept);            // <-- set relation instead of departmentId
-            testEntityManager.persist(s);
+        Student student = testEntityManager.find(Student.class, STUDENT_ID);
+        if (student == null) {
+            student = new Student();
+            student.setStudentId(STUDENT_ID);
+            student.setStudentName("Test Student"); // NOT NULL
+            student.setSectionId("A");                // NOT NULL -> was missing earlier
+            student.setDepartmentId(department);            // <-- set relation instead of departmentId
+            testEntityManager.persist(student);
         }
 
         // 2) Ensure Subject exists
-        Subject sub = testEntityManager.find(Subject.class, SUBJECT_ID);
-        if (sub == null) {
-            sub = new Subject();
-            sub.setSubjectId(SUBJECT_ID);
-            sub.setSubjectName("Mathematics"); // set NOT NULL fields
-            testEntityManager.persist(sub);
+        Subject subject = testEntityManager.find(Subject.class, SUBJECT_ID);
+        if (subject == null) {
+            subject = new Subject();
+            subject.setSubjectId(SUBJECT_ID);
+            subject.setSubjectName("Mathematics"); // set NOT NULL fields
+            testEntityManager.persist(subject);
         }
 
         testEntityManager.flush();

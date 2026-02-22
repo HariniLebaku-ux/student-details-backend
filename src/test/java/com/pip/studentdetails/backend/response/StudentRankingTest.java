@@ -7,7 +7,7 @@ class StudentRankingTest {
 
     @Test
     void shouldCreateRecordAndExposeValues() {
-        StudentRanking r = new StudentRanking(
+        StudentRanking studentRanking = new StudentRanking(
                 "ST_001",
                 "Radha",
                 "A",
@@ -17,36 +17,36 @@ class StudentRankingTest {
                 "Computer Science and Engineering"
         );
 
-        assertEquals("ST_001", r.studentId());
-        assertEquals("Radha", r.studentName());
-        assertEquals("A", r.section());
-        assertEquals("SEM_1", r.semesterId());
-        assertEquals("SUB_011", r.subjectTid());
-        assertEquals(95, r.marks());
-        assertEquals("Computer Science and Engineering", r.departmentName());
+        assertEquals("ST_001", studentRanking.studentId());
+        assertEquals("Radha", studentRanking.studentName());
+        assertEquals("A", studentRanking.section());
+        assertEquals("SEM_1", studentRanking.semesterId());
+        assertEquals("SUB_011", studentRanking.subjectTid());
+        assertEquals(95, studentRanking.marks());
+        assertEquals("Computer Science and Engineering", studentRanking.departmentName());
     }
 
     @Test
     void equalsAndHashCodeShouldWorkForSameValues() {
-        StudentRanking a = new StudentRanking("ST_001", "Radha", "A", "SEM_1", "SUB_011", 95, "DEPT_CS");
-        StudentRanking b = new StudentRanking("ST_001", "Radha", "A", "SEM_1", "SUB_011", 95, "DEPT_CS");
+        StudentRanking studentRanking1 = new StudentRanking("ST_001", "Radha", "A", "SEM_1", "SUB_011", 95, "DEPT_CS");
+        StudentRanking studentRanking2 = new StudentRanking("ST_001", "Radha", "A", "SEM_1", "SUB_011", 95, "DEPT_CS");
 
-        assertEquals(a, b);
-        assertEquals(a.hashCode(), b.hashCode());
+        assertEquals(studentRanking1, studentRanking2);
+        assertEquals(studentRanking1.hashCode(), studentRanking2.hashCode());
     }
 
     @Test
     void equalsShouldDifferForDifferentValues() {
-        StudentRanking a = new StudentRanking("ST_001", "Radha", "A", "SEM_1", "SUB_011", 95, "DEPT_CS");
-        StudentRanking c = new StudentRanking("ST_002", "Kiran", "B", "SEM_1", "SUB_011", 95, "DEPT_CS");
+        StudentRanking studentRanking1 = new StudentRanking("ST_001", "Radha", "A", "SEM_1", "SUB_011", 95, "DEPT_CS");
+        StudentRanking studentRanking2 = new StudentRanking("ST_002", "Kiran", "B", "SEM_1", "SUB_011", 95, "DEPT_CS");
 
-        assertNotEquals(a, c);
+        assertNotEquals(studentRanking1, studentRanking2);
     }
 
     @Test
     void toStringShouldContainFieldNamesAndValues() {
-        StudentRanking r = new StudentRanking("ST_001", "Radha", "A", "SEM_1", "SUB_011", 90, "DEPT_CS");
-        String s = r.toString();
+        StudentRanking studentRanking = new StudentRanking("ST_001", "Radha", "A", "SEM_1", "SUB_011", 90, "DEPT_CS");
+        String s = studentRanking.toString();
 
         assertTrue(s.contains("StudentRanking"));
         assertTrue(s.contains("studentId=ST_001"));
@@ -60,20 +60,20 @@ class StudentRankingTest {
 
     @Test
     void nullStringsAreAllowedUnlessValidatedElsewhere() {
-        StudentRanking r = new StudentRanking(null, null, null, null, null, 0, null);
+        StudentRanking studentRanking = new StudentRanking(null, null, null, null, null, 0, null);
 
-        assertNull(r.studentId());
-        assertNull(r.studentName());
-        assertNull(r.section());
-        assertNull(r.semesterId());
-        assertNull(r.subjectTid());
-        assertEquals(0, r.marks());
-        assertNull(r.departmentName());
+        assertNull(studentRanking.studentId());
+        assertNull(studentRanking.studentName());
+        assertNull(studentRanking.section());
+        assertNull(studentRanking.semesterId());
+        assertNull(studentRanking.subjectTid());
+        assertEquals(0, studentRanking.marks());
+        assertNull(studentRanking.departmentName());
     }
 
     @Test
     void negativeMarksAreAllowedUnlessYouValidateElsewhere() {
-        StudentRanking r = new StudentRanking("ST_009", "Test", "A", "SEM_1", "SUB_001", -7, "DEPT_CS");
-        assertEquals(-7, r.marks());
+        StudentRanking studentRanking = new StudentRanking("ST_009", "Test", "A", "SEM_1", "SUB_001", -7, "DEPT_CS");
+        assertEquals(-7, studentRanking.marks());
     }
 }

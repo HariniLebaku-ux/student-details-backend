@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <testsuite name="com.pip.studentdetails.backend.service.StudentBackendServiceImplTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2026-02-22T22:08:03" hostname="BDC6-L-141HVWQ" time="0.402">
   <properties/>
   <testcase name="getDepartmentWiseRankingDetails_success()" classname="com.pip.studentdetails.backend.service.StudentBackendServiceImplTest" time="0.342"/>
@@ -9,6 +10,18 @@
   <testcase name="getDepartmentWisePassPercentageDetails_exception()" classname="com.pip.studentdetails.backend.service.StudentBackendServiceImplTest" time="0.004"/>
   <testcase name="getDepartmentWisePassPercentageDetails_success()" classname="com.pip.studentdetails.backend.service.StudentBackendServiceImplTest" time="0.014"/>
   <testcase name="getDepartmentWiseRankingDetails_exception()" classname="com.pip.studentdetails.backend.service.StudentBackendServiceImplTest" time="0.005"/>
+=======
+<testsuite name="com.pip.studentdetails.backend.service.StudentBackendServiceImplTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2026-02-22T21:45:46" hostname="BDC6-L-141HVWQ" time="0.449">
+  <properties/>
+  <testcase name="getDepartmentWiseRankingDetails_success()" classname="com.pip.studentdetails.backend.service.StudentBackendServiceImplTest" time="0.384"/>
+  <testcase name="createStudent_shouldThrowStudentAlreadyExistsException_whenStudentIdExists()" classname="com.pip.studentdetails.backend.service.StudentBackendServiceImplTest" time="0.012"/>
+  <testcase name="createStudent_Success()" classname="com.pip.studentdetails.backend.service.StudentBackendServiceImplTest" time="0.005"/>
+  <testcase name="createStudentDetails_Success()" classname="com.pip.studentdetails.backend.service.StudentBackendServiceImplTest" time="0.004"/>
+  <testcase name="getDepartmentTopperDetails_exception()" classname="com.pip.studentdetails.backend.service.StudentBackendServiceImplTest" time="0.003"/>
+  <testcase name="getDepartmentWisePassPercentageDetails_exception()" classname="com.pip.studentdetails.backend.service.StudentBackendServiceImplTest" time="0.005"/>
+  <testcase name="getDepartmentWisePassPercentageDetails_success()" classname="com.pip.studentdetails.backend.service.StudentBackendServiceImplTest" time="0.02"/>
+  <testcase name="getDepartmentWiseRankingDetails_exception()" classname="com.pip.studentdetails.backend.service.StudentBackendServiceImplTest" time="0.003"/>
+>>>>>>> e95222cb62b9fce4b467f4f08347e56624851f27
   <testcase name="createStudent_NullPointerException()" classname="com.pip.studentdetails.backend.service.StudentBackendServiceImplTest" time="0.002"/>
   <testcase name="createStudentDetails_NullPointerException()" classname="com.pip.studentdetails.backend.service.StudentBackendServiceImplTest" time="0.002"/>
   <system-out><![CDATA[]]></system-out>

@@ -1,19 +1,9 @@
-/*
 package com.pip.studentdetails.backend.entity;
 
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
-
 import static org.assertj.core.api.Assertions.assertThat;
 
-
-*/
-/**
- * Fast unit tests for the Student JPA entity (no persistence involved).
- *//*
+/** Fast unit tests for the Student JPA entity (no persistence involved).*/
 
 class StudentTest {
 
@@ -22,7 +12,7 @@ class StudentTest {
     Department department = new Department();
 
     @Test
-    void defaultConstructor_success() {
+    void studentDefaultConstructor_success() {
 
         student.setStudentId("ST_001");
         student.setStudentName("John");
@@ -36,16 +26,16 @@ class StudentTest {
     }
 
     @Test
-    @DisplayName("Convenience constructor should initialize required fields")
-    void Constructorinitializesfields_Success() {
+    void StudentNullDetails_Failure() {
 
-        Student s = new Student("ST_002", department, "B");
+        Student s = new Student("ST_002",null, department, "B");
 
         assertThat(s.getStudentId()).isEqualTo("ST_002");
+        //assertThat(s.getStudentName()).isEqualTo("John");
         assertThat(s.getDepartmentId()).isSameAs(department);
         assertThat(s.getSectionId()).isEqualTo("B");
 
         // studentName isn’t in the convenience ctor — should still be null
         assertThat(s.getStudentName()).isNull();
     }
-}*/
+}

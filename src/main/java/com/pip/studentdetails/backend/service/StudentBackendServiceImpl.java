@@ -54,6 +54,10 @@ public class StudentBackendServiceImpl implements StudentBackendService {
      */
     @Override
     public void createStudentDetails(StudentDetailsRequest studentDetailsRequest) {
+        if (studentRepository.existsById(studentDetailsRequest.studentId())) {
+            throw new StudentAlreadyExistsException(
+                    "Student with id " + studentDetailsRequest.studentId() + " already exists");
+        }
         // Passing record values to repository insert method
         studentDetailsRepository.insertStudentDetails(studentDetailsRequest.studentId(), studentDetailsRequest.subjectId(), studentDetailsRequest.marks());
     }

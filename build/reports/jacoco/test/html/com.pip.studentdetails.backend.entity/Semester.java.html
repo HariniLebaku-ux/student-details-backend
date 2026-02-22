@@ -30,7 +30,7 @@
       * Subjects offered in this semester.
       * LinkedHashSet is used to preserve insertion order and avoid duplicates.
       */
-<span class="pc" id="L33">     @OneToMany(mappedBy = &quot;semester&quot;, cascade = CascadeType.ALL, orphanRemoval = false)</span>
+<span class="fc" id="L33">     @OneToMany(mappedBy = &quot;semester&quot;, cascade = CascadeType.ALL, orphanRemoval = false)</span>
      private Set&lt;Subject&gt; subjects = new LinkedHashSet&lt;&gt;();
 
      /**
@@ -40,33 +40,33 @@
 
      /** @return the semester ID */
      public String getSemesterId() {
-<span class="nc" id="L43">         return semesterId;</span>
+<span class="fc" id="L43">         return semesterId;</span>
      }
 
      /** @param semesterId sets the semester ID */
      public void setSemesterId(String semesterId) {
-<span class="nc" id="L48">         this.semesterId = semesterId;</span>
-<span class="nc" id="L49">     }</span>
+<span class="fc" id="L48">         this.semesterId = semesterId;</span>
+<span class="fc" id="L49">     }</span>
 
      /** @return the semester name */
      public String getSemesterName() {
-<span class="nc" id="L53">         return semesterName;</span>
+<span class="fc" id="L53">         return semesterName;</span>
      }
 
      /** @param semesterName sets the semester name */
      public void setSemesterName(String semesterName) {
-<span class="nc" id="L58">         this.semesterName = semesterName;</span>
-<span class="nc" id="L59">     }</span>
+<span class="fc" id="L58">         this.semesterName = semesterName;</span>
+<span class="fc" id="L59">     }</span>
 
      /** @return the set of subjects for this semester */
      public Set&lt;Subject&gt; getSubjects() {
-<span class="nc" id="L63">         return subjects;</span>
+<span class="fc" id="L63">         return subjects;</span>
      }
 
      /** @param subjects sets the subject collection for this semester */
      public void setSubjects(Set&lt;Subject&gt; subjects) {
-<span class="nc" id="L68">         this.subjects = subjects;</span>
-<span class="nc" id="L69">     }</span>
+<span class="fc" id="L68">         this.subjects = subjects;</span>
+<span class="fc" id="L69">     }</span>
 
      /**
       * Convenience constructor to create a Semester object with all fields.
@@ -75,10 +75,10 @@
       * @param semesterName Display name of the semester
       * @param subjects     Set of subjects mapped to this semester
       */
-<span class="nc" id="L78">     public Semester(String semesterId, String semesterName, Set&lt;Subject&gt; subjects) {</span>
-<span class="nc" id="L79">         this.semesterId = semesterId;</span>
-<span class="nc" id="L80">         this.semesterName = semesterName;</span>
-<span class="nc" id="L81">         this.subjects = subjects;</span>
-<span class="nc" id="L82">     }</span>
+<span class="fc" id="L78">     public Semester(String semesterId, String semesterName, Set&lt;Subject&gt; subjects) {</span>
+<span class="fc" id="L79">         this.semesterId = semesterId;</span>
+<span class="fc" id="L80">         this.semesterName = semesterName;</span>
+<span class="fc" id="L81">         this.subjects = subjects;</span>
+<span class="fc" id="L82">     }</span>
  }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>
