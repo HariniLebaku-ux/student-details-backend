@@ -1,0 +1,490 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 11.21
+-- Dumped by pg_dump version 11.21
+
+-- Started on 2026-02-22 20:26:07
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+--
+-- TOC entry 6 (class 2615 OID 16387)
+-- Name: student_core; Type: SCHEMA; Schema: -; Owner: postgres
+--
+
+CREATE SCHEMA student_core;
+
+
+ALTER SCHEMA student_core OWNER TO postgres;
+
+SET default_tablespace = '';
+
+SET default_with_oids = false;
+
+--
+-- TOC entry 200 (class 1259 OID 24743)
+-- Name: department; Type: TABLE; Schema: student_core; Owner: postgres
+--
+
+CREATE TABLE student_core.department (
+    department_id character varying(10) NOT NULL,
+    department_name character varying(100) NOT NULL
+);
+
+
+ALTER TABLE student_core.department OWNER TO postgres;
+
+--
+-- TOC entry 201 (class 1259 OID 24758)
+-- Name: semester; Type: TABLE; Schema: student_core; Owner: postgres
+--
+
+CREATE TABLE student_core.semester (
+    semester_id character varying(10) NOT NULL,
+    semester_name character varying(20) NOT NULL
+);
+
+
+ALTER TABLE student_core.semester OWNER TO postgres;
+
+--
+-- TOC entry 203 (class 1259 OID 32817)
+-- Name: student; Type: TABLE; Schema: student_core; Owner: postgres
+--
+
+CREATE TABLE student_core.student (
+    student_id character varying(10) NOT NULL,
+    student_name character varying(50) NOT NULL,
+    department_id character varying(10) NOT NULL,
+    section character varying(5) NOT NULL
+);
+
+
+ALTER TABLE student_core.student OWNER TO postgres;
+
+--
+-- TOC entry 204 (class 1259 OID 32827)
+-- Name: student_details; Type: TABLE; Schema: student_core; Owner: postgres
+--
+
+CREATE TABLE student_core.student_details (
+    student_id character varying(10) NOT NULL,
+    subject_id character varying(10) NOT NULL,
+    marks integer DEFAULT 0 NOT NULL
+);
+
+
+ALTER TABLE student_core.student_details OWNER TO postgres;
+
+--
+-- TOC entry 202 (class 1259 OID 24763)
+-- Name: subject; Type: TABLE; Schema: student_core; Owner: postgres
+--
+
+CREATE TABLE student_core.subject (
+    subject_id character varying(10) NOT NULL,
+    subject_name character varying(50) NOT NULL,
+    semester_id character varying(10) NOT NULL
+);
+
+
+ALTER TABLE student_core.subject OWNER TO postgres;
+
+--
+-- TOC entry 2844 (class 0 OID 24743)
+-- Dependencies: 200
+-- Data for Name: department; Type: TABLE DATA; Schema: student_core; Owner: postgres
+--
+
+COPY student_core.department (department_id, department_name) FROM stdin;
+DEPT_CS	Computer Science and Engineering
+DEPT_ECE	Electronics and Communication Engineering
+DEPT_IT	Information Technology
+\.
+
+
+--
+-- TOC entry 2845 (class 0 OID 24758)
+-- Dependencies: 201
+-- Data for Name: semester; Type: TABLE DATA; Schema: student_core; Owner: postgres
+--
+
+COPY student_core.semester (semester_id, semester_name) FROM stdin;
+SEM_1	Semester One
+SEM_2	Semester Two
+\.
+
+
+--
+-- TOC entry 2847 (class 0 OID 32817)
+-- Dependencies: 203
+-- Data for Name: student; Type: TABLE DATA; Schema: student_core; Owner: postgres
+--
+
+COPY student_core.student (student_id, student_name, department_id, section) FROM stdin;
+ST_001	john	DEPT_CS	A
+ST_002	raju	DEPT_ECE	A
+ST_003	robin	DEPT_IT	B
+ST_004	raghu	DEPT_CS	A
+ST_005	zoro	DEPT_ECE	A
+ST_006	aniruth	DEPT_IT	B
+ST_007	deepithi	DEPT_CS	A
+ST_008	deepa	DEPT_ECE	A
+ST_009	haritha	DEPT_IT	B
+ST_010	harika	DEPT_CS	A
+ST_011	lekha	DEPT_ECE	A
+ST_012	radha	DEPT_IT	B
+ST_013	reshma	DEPT_CS	A
+ST_014	prasad	DEPT_ECE	A
+ST_015	bhima	DEPT_IT	B
+ST_016	sankar	DEPT_CS	A
+ST_017	raja	DEPT_ECE	A
+ST_018	roja	DEPT_IT	B
+\.
+
+
+--
+-- TOC entry 2848 (class 0 OID 32827)
+-- Dependencies: 204
+-- Data for Name: student_details; Type: TABLE DATA; Schema: student_core; Owner: postgres
+--
+
+COPY student_core.student_details (student_id, subject_id, marks) FROM stdin;
+ST_001	SUB_001	100
+ST_001	SUB_002	90
+ST_001	SUB_003	50
+ST_001	SUB_004	77
+ST_001	SUB_005	80
+ST_001	SUB_006	44
+ST_001	SUB_007	55
+ST_001	SUB_008	56
+ST_001	SUB_009	88
+ST_001	SUB_010	87
+ST_001	SUB_011	91
+ST_001	SUB_012	54
+ST_002	SUB_001	40
+ST_002	SUB_002	38
+ST_002	SUB_003	50
+ST_002	SUB_004	60
+ST_002	SUB_005	32
+ST_002	SUB_006	43
+ST_002	SUB_007	31
+ST_002	SUB_008	56
+ST_002	SUB_017	74
+ST_002	SUB_018	43
+ST_002	SUB_019	23
+ST_002	SUB_020	76
+ST_003	SUB_001	100
+ST_003	SUB_002	90
+ST_003	SUB_003	89
+ST_003	SUB_004	90
+ST_003	SUB_005	90
+ST_003	SUB_006	100
+ST_003	SUB_007	100
+ST_003	SUB_008	100
+ST_003	SUB_013	100
+ST_003	SUB_014	100
+ST_003	SUB_015	100
+ST_003	SUB_016	100
+ST_004	SUB_001	83
+ST_004	SUB_002	25
+ST_004	SUB_003	36
+ST_004	SUB_004	98
+ST_004	SUB_005	89
+ST_004	SUB_006	74
+ST_004	SUB_007	75
+ST_004	SUB_008	65
+ST_004	SUB_009	32
+ST_004	SUB_010	43
+ST_004	SUB_011	87
+ST_004	SUB_012	54
+ST_005	SUB_001	76
+ST_005	SUB_002	87
+ST_005	SUB_003	65
+ST_005	SUB_004	98
+ST_005	SUB_005	100
+ST_005	SUB_006	76
+ST_005	SUB_007	89
+ST_005	SUB_008	91
+ST_005	SUB_017	65
+ST_005	SUB_018	45
+ST_005	SUB_019	34
+ST_005	SUB_020	23
+ST_006	SUB_001	100
+ST_006	SUB_002	89
+ST_006	SUB_003	90
+ST_006	SUB_004	90
+ST_006	SUB_005	100
+ST_006	SUB_006	90
+ST_006	SUB_007	100
+ST_006	SUB_008	100
+ST_006	SUB_013	100
+ST_006	SUB_014	100
+ST_006	SUB_015	100
+ST_006	SUB_016	100
+ST_007	SUB_001	100
+ST_007	SUB_002	90
+ST_007	SUB_003	50
+ST_007	SUB_004	77
+ST_007	SUB_005	80
+ST_007	SUB_006	44
+ST_007	SUB_007	55
+ST_007	SUB_008	88
+ST_007	SUB_009	56
+ST_007	SUB_010	76
+ST_007	SUB_011	91
+ST_007	SUB_012	92
+ST_008	SUB_001	40
+ST_008	SUB_002	38
+ST_008	SUB_003	50
+ST_008	SUB_004	60
+ST_008	SUB_005	32
+ST_008	SUB_006	43
+ST_008	SUB_007	31
+ST_008	SUB_008	56
+ST_008	SUB_017	54
+ST_008	SUB_018	87
+ST_008	SUB_019	69
+ST_008	SUB_020	45
+ST_009	SUB_001	100
+ST_009	SUB_002	35
+ST_009	SUB_003	73
+ST_009	SUB_004	56
+ST_009	SUB_005	88
+ST_009	SUB_006	90
+ST_009	SUB_007	90
+ST_009	SUB_008	89
+ST_009	SUB_013	23
+ST_009	SUB_014	45
+ST_009	SUB_015	66
+ST_009	SUB_016	89
+ST_010	SUB_001	83
+ST_010	SUB_002	25
+ST_010	SUB_003	36
+ST_010	SUB_004	98
+ST_010	SUB_005	89
+ST_010	SUB_006	74
+ST_010	SUB_007	75
+ST_010	SUB_008	65
+ST_010	SUB_009	76
+ST_010	SUB_010	23
+ST_010	SUB_011	78
+ST_010	SUB_012	95
+ST_011	SUB_001	76
+ST_011	SUB_002	87
+ST_011	SUB_003	65
+ST_011	SUB_004	98
+ST_011	SUB_005	100
+ST_011	SUB_006	76
+ST_011	SUB_007	89
+ST_011	SUB_008	91
+ST_011	SUB_017	56
+ST_011	SUB_018	73
+ST_011	SUB_019	56
+ST_011	SUB_020	56
+ST_012	SUB_001	100
+ST_012	SUB_002	0
+ST_012	SUB_003	67
+ST_012	SUB_004	88
+ST_012	SUB_005	100
+ST_012	SUB_006	90
+ST_012	SUB_007	80
+ST_012	SUB_008	90
+ST_012	SUB_013	90
+ST_012	SUB_014	89
+ST_012	SUB_015	90
+ST_012	SUB_016	78
+ST_013	SUB_001	40
+ST_013	SUB_002	38
+ST_013	SUB_003	50
+ST_013	SUB_004	60
+ST_013	SUB_005	32
+ST_013	SUB_006	43
+ST_013	SUB_007	31
+ST_013	SUB_008	56
+ST_013	SUB_009	67
+ST_013	SUB_010	59
+ST_013	SUB_011	51
+ST_013	SUB_012	62
+ST_014	SUB_001	97
+ST_014	SUB_002	34
+ST_014	SUB_003	74
+ST_014	SUB_004	75
+ST_014	SUB_005	65
+ST_014	SUB_006	75
+ST_014	SUB_007	73
+ST_014	SUB_008	54
+ST_014	SUB_017	76
+ST_014	SUB_018	54
+ST_014	SUB_019	39
+ST_014	SUB_020	65
+ST_015	SUB_001	80
+ST_015	SUB_002	90
+ST_015	SUB_003	70
+ST_015	SUB_004	60
+ST_015	SUB_005	50
+ST_015	SUB_006	70
+ST_015	SUB_007	20
+ST_015	SUB_008	30
+ST_015	SUB_013	100
+ST_015	SUB_014	100
+ST_015	SUB_015	100
+ST_015	SUB_016	100
+ST_016	SUB_001	76
+ST_016	SUB_002	87
+ST_016	SUB_003	65
+ST_016	SUB_004	98
+ST_016	SUB_005	100
+ST_016	SUB_006	76
+ST_016	SUB_007	89
+ST_016	SUB_008	91
+ST_016	SUB_009	43
+ST_016	SUB_010	43
+ST_016	SUB_011	76
+ST_016	SUB_012	87
+ST_017	SUB_001	34
+ST_017	SUB_002	36
+ST_017	SUB_003	75
+ST_017	SUB_004	73
+ST_017	SUB_005	43
+ST_017	SUB_006	43
+ST_017	SUB_007	76
+ST_017	SUB_008	87
+ST_017	SUB_017	48
+ST_017	SUB_018	75
+ST_017	SUB_019	65
+ST_017	SUB_020	54
+ST_018	SUB_001	100
+ST_018	SUB_002	90
+ST_018	SUB_003	89
+ST_018	SUB_004	90
+ST_018	SUB_005	90
+ST_018	SUB_006	100
+ST_018	SUB_007	100
+ST_018	SUB_008	100
+ST_018	SUB_013	100
+ST_018	SUB_014	100
+ST_018	SUB_015	100
+ST_018	SUB_016	100
+\.
+
+
+--
+-- TOC entry 2846 (class 0 OID 24763)
+-- Dependencies: 202
+-- Data for Name: subject; Type: TABLE DATA; Schema: student_core; Owner: postgres
+--
+
+COPY student_core.subject (subject_id, subject_name, semester_id) FROM stdin;
+SUB_001	English	SEM_1
+SUB_002	Physics	SEM_1
+SUB_003	Chemistry	SEM_1
+SUB_004	Mathematics Basics	SEM_1
+SUB_005	Graphics Basics	SEM_1
+SUB_006	Computer Basics	SEM_1
+SUB_008	EEE Basics	SEM_1
+SUB_009	CS Sub1	SEM_2
+SUB_010	CS Sub2	SEM_2
+SUB_011	CS Sub3	SEM_2
+SUB_012	CS Sub4	SEM_2
+SUB_013	IT Sub1	SEM_2
+SUB_014	IT Sub2	SEM_2
+SUB_015	IT Sub3	SEM_2
+SUB_016	IT Sub4	SEM_2
+SUB_017	ECE Sub1	SEM_2
+SUB_018	ECE Sub2	SEM_2
+SUB_019	ECE Sub3	SEM_2
+SUB_020	ECE Sub4	SEM_2
+SUB_007	Mech Basics	SEM_1
+\.
+
+
+--
+-- TOC entry 2711 (class 2606 OID 24747)
+-- Name: department department_pkey; Type: CONSTRAINT; Schema: student_core; Owner: postgres
+--
+
+ALTER TABLE ONLY student_core.department
+    ADD CONSTRAINT department_pkey PRIMARY KEY (department_id);
+
+
+--
+-- TOC entry 2713 (class 2606 OID 24762)
+-- Name: semester semester_pkey; Type: CONSTRAINT; Schema: student_core; Owner: postgres
+--
+
+ALTER TABLE ONLY student_core.semester
+    ADD CONSTRAINT semester_pkey PRIMARY KEY (semester_id);
+
+
+--
+-- TOC entry 2719 (class 2606 OID 32832)
+-- Name: student_details student_details_pkey; Type: CONSTRAINT; Schema: student_core; Owner: postgres
+--
+
+ALTER TABLE ONLY student_core.student_details
+    ADD CONSTRAINT student_details_pkey PRIMARY KEY (student_id, subject_id);
+
+
+--
+-- TOC entry 2717 (class 2606 OID 32821)
+-- Name: student student_pkey; Type: CONSTRAINT; Schema: student_core; Owner: postgres
+--
+
+ALTER TABLE ONLY student_core.student
+    ADD CONSTRAINT student_pkey PRIMARY KEY (student_id);
+
+
+--
+-- TOC entry 2715 (class 2606 OID 24767)
+-- Name: subject subject_pkey; Type: CONSTRAINT; Schema: student_core; Owner: postgres
+--
+
+ALTER TABLE ONLY student_core.subject
+    ADD CONSTRAINT subject_pkey PRIMARY KEY (subject_id);
+
+
+--
+-- TOC entry 2721 (class 2606 OID 32822)
+-- Name: student student_department_id_fkey; Type: FK CONSTRAINT; Schema: student_core; Owner: postgres
+--
+
+ALTER TABLE ONLY student_core.student
+    ADD CONSTRAINT student_department_id_fkey FOREIGN KEY (department_id) REFERENCES student_core.department(department_id);
+
+
+--
+-- TOC entry 2722 (class 2606 OID 32833)
+-- Name: student_details student_details_student_id_fkey; Type: FK CONSTRAINT; Schema: student_core; Owner: postgres
+--
+
+ALTER TABLE ONLY student_core.student_details
+    ADD CONSTRAINT student_details_student_id_fkey FOREIGN KEY (student_id) REFERENCES student_core.student(student_id);
+
+
+--
+-- TOC entry 2720 (class 2606 OID 24768)
+-- Name: subject subject_semester_id_fkey; Type: FK CONSTRAINT; Schema: student_core; Owner: postgres
+--
+
+ALTER TABLE ONLY student_core.subject
+    ADD CONSTRAINT subject_semester_id_fkey FOREIGN KEY (semester_id) REFERENCES student_core.semester(semester_id);
+
+
+-- Completed on 2026-02-22 20:26:09
+
+--
+-- PostgreSQL database dump complete
+--
+

@@ -3,7 +3,7 @@ package com.pip.studentdetails.backend.exception;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-class StudentAlreadyExistsExceptionTest {
+class StudentAlreadyExistExceptionTest {
 
     @Test
     void studentAlreadyExistExceptionMessage_Success() {

@@ -1,13 +1,4 @@
 
-
-INSERT INTO student_details (student_id, subject_id, marks, student_name, department_id) VALUES ('ST_001', 'SUB_003', 87, 'Arun', 'CSE');
-INSERT INTO student_details (student_id, subject_id, marks, student_name, department_id) VALUES ('ST_001', 'SUB_004', 87, 'Arun', 'CSE');
-INSERT INTO student_details (student_id, subject_id, marks, student_name, department_id) VALUES ('ST_002', 'SUB_004', 87, 'Arun', 'CSE');
-INSERT INTO student_details (student_id, subject_id, marks, student_name, department_id) VALUES ('ST_002', 'SUB_005', 87, 'Arun', 'CSE');
-
-
-
-
 INSERT INTO department (department_id, department_name) VALUES ('DEPT_CS', 'Computer Science and Engineering');
 INSERT INTO department (department_id, department_name) VALUES ('DEPT_ECE', 'Electronics and Communication Engineering');
 INSERT INTO department (department_id, department_name) VALUES ('DEPT_IT', 'Information Technology');
@@ -36,6 +27,28 @@ INSERT INTO student (student_id, student_name, department_id, section) VALUES ('
 INSERT INTO student (student_id, student_name, department_id, section) VALUES ('ST_016', 'sankar', 'DEPT_CS', 'A');
 INSERT INTO student (student_id, student_name, department_id, section) VALUES ('ST_017', 'raja', 'DEPT_ECE', 'A');
 INSERT INTO student (student_id, student_name, department_id, section) VALUES ('ST_018', 'roja', 'DEPT_IT', 'B');
+
+
+INSERT INTO subject (subject_id, subject_name, semester_id) VALUES ('SUB_001', 'English', 'SEM_1');
+INSERT INTO subject (subject_id, subject_name, semester_id) VALUES ('SUB_002', 'Physics', 'SEM_1');
+INSERT INTO subject (subject_id, subject_name, semester_id) VALUES ('SUB_003', 'Chemistry', 'SEM_1');
+INSERT INTO subject (subject_id, subject_name, semester_id) VALUES ('SUB_004', 'Mathematics Basics', 'SEM_1');
+INSERT INTO subject (subject_id, subject_name, semester_id) VALUES ('SUB_005', 'Graphics Basics', 'SEM_1');
+INSERT INTO subject (subject_id, subject_name, semester_id) VALUES ('SUB_006', 'Computer Basics', 'SEM_1');
+INSERT INTO subject (subject_id, subject_name, semester_id) VALUES ('SUB_008', 'EEE Basics', 'SEM_1');
+INSERT INTO subject (subject_id, subject_name, semester_id) VALUES ('SUB_009', 'CS Sub1', 'SEM_2');
+INSERT INTO subject (subject_id, subject_name, semester_id) VALUES ('SUB_010', 'CS Sub2', 'SEM_2');
+INSERT INTO subject (subject_id, subject_name, semester_id) VALUES ('SUB_011', 'CS Sub3', 'SEM_2');
+INSERT INTO subject (subject_id, subject_name, semester_id) VALUES ('SUB_012', 'CS Sub4', 'SEM_2');
+INSERT INTO subject (subject_id, subject_name, semester_id) VALUES ('SUB_013', 'IT Sub1', 'SEM_2');
+INSERT INTO subject (subject_id, subject_name, semester_id) VALUES ('SUB_014', 'IT Sub2', 'SEM_2');
+INSERT INTO subject (subject_id, subject_name, semester_id) VALUES ('SUB_015', 'IT Sub3', 'SEM_2');
+INSERT INTO subject (subject_id, subject_name, semester_id) VALUES ('SUB_016', 'IT Sub4', 'SEM_2');
+INSERT INTO subject (subject_id, subject_name, semester_id) VALUES ('SUB_017', 'ECE Sub1', 'SEM_2');
+INSERT INTO subject (subject_id, subject_name, semester_id) VALUES ('SUB_018', 'ECE Sub2', 'SEM_2');
+INSERT INTO subject (subject_id, subject_name, semester_id) VALUES ('SUB_019', 'ECE Sub3', 'SEM_2');
+INSERT INTO subject (subject_id, subject_name, semester_id) VALUES ('SUB_020', 'ECE Sub4', 'SEM_2');
+INSERT INTO subject (subject_id, subject_name, semester_id) VALUES ('SUB_007', 'Mech Basics', 'SEM_1');
 
 
 INSERT INTO student_details (student_id, subject_id, marks) VALUES ('ST_001', 'SUB_001', 100);
@@ -257,26 +270,6 @@ INSERT INTO student_details (student_id, subject_id, marks) VALUES ('ST_018', 'S
 
 
 
-INSERT INTO subject (subject_id, subject_name, semester_id) VALUES ('SUB_001', 'English', 'SEM_1');
-INSERT INTO subject (subject_id, subject_name, semester_id) VALUES ('SUB_002', 'Physics', 'SEM_1');
-INSERT INTO subject (subject_id, subject_name, semester_id) VALUES ('SUB_003', 'Chemistry', 'SEM_1');
-INSERT INTO subject (subject_id, subject_name, semester_id) VALUES ('SUB_004', 'Mathematics Basics', 'SEM_1');
-INSERT INTO subject (subject_id, subject_name, semester_id) VALUES ('SUB_005', 'Graphics Basics', 'SEM_1');
-INSERT INTO subject (subject_id, subject_name, semester_id) VALUES ('SUB_006', 'Computer Basics', 'SEM_1');
-INSERT INTO subject (subject_id, subject_name, semester_id) VALUES ('SUB_008', 'EEE Basics', 'SEM_1');
-INSERT INTO subject (subject_id, subject_name, semester_id) VALUES ('SUB_009', 'CS Sub1', 'SEM_2');
-INSERT INTO subject (subject_id, subject_name, semester_id) VALUES ('SUB_010', 'CS Sub2', 'SEM_2');
-INSERT INTO subject (subject_id, subject_name, semester_id) VALUES ('SUB_011', 'CS Sub3', 'SEM_2');
-INSERT INTO subject (subject_id, subject_name, semester_id) VALUES ('SUB_012', 'CS Sub4', 'SEM_2');
-INSERT INTO subject (subject_id, subject_name, semester_id) VALUES ('SUB_013', 'IT Sub1', 'SEM_2');
-INSERT INTO subject (subject_id, subject_name, semester_id) VALUES ('SUB_014', 'IT Sub2', 'SEM_2');
-INSERT INTO subject (subject_id, subject_name, semester_id) VALUES ('SUB_015', 'IT Sub3', 'SEM_2');
-INSERT INTO subject (subject_id, subject_name, semester_id) VALUES ('SUB_016', 'IT Sub4', 'SEM_2');
-INSERT INTO subject (subject_id, subject_name, semester_id) VALUES ('SUB_017', 'ECE Sub1', 'SEM_2');
-INSERT INTO subject (subject_id, subject_name, semester_id) VALUES ('SUB_018', 'ECE Sub2', 'SEM_2');
-INSERT INTO subject (subject_id, subject_name, semester_id) VALUES ('SUB_019', 'ECE Sub3', 'SEM_2');
-INSERT INTO subject (subject_id, subject_name, semester_id) VALUES ('SUB_020', 'ECE Sub4', 'SEM_2');
-INSERT INTO subject (subject_id, subject_name, semester_id) VALUES ('SUB_007', 'Mech Basics', 'SEM_1');
 
 
 -- Completed on 2026-02-18 01:02:21

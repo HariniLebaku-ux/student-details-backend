@@ -1,4 +1,3 @@
-/*
 package com.pip.studentdetails.backend.repository;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -28,13 +27,8 @@ class StudentRepositoryTest {
 
     @Test
     void insertStudent_ShouldInsertRow(){
-        Department department = new Department();
 
-        department.setDepartmentId("DEPT_CS");
-        department.setDepartmentName("Computer Science and Engineering");
-        testEntityManager.persist(department);
-
-        repository.insertStudent("ST_031", "John","DEPT_CS", "A");
+        repository.insertStudent("ST_031", "John","DEPT_IT", "A");
 
         Student student = testEntityManager.find(Student.class, "ST_031");
         assertNotNull(student);
@@ -43,11 +37,6 @@ class StudentRepositoryTest {
 
     @Test
     void insertStudent_FailDuplicateKey() {
-        Department department = new Department();
-
-        department.setDepartmentId("DEPT_CS");
-        department.setDepartmentName("Computer Science and Engineering");
-        testEntityManager.persist(department);
 
         repository.insertStudent("ST_031", "John","DEPT_CS", "A");
 
@@ -58,28 +47,6 @@ class StudentRepositoryTest {
 
     @Test
     void fetchStudentMarksForTopper_Success() {
-        Department department = new Department();
-
-        department.setDepartmentId("DEPT_CS");
-        department.setDepartmentName("Computer Science and Engineering");
-        testEntityManager.persist(department);
-
-        Student student = new Student("ST_001", "John",department, "A");
-        testEntityManager.persist(student);
-
-        StudentDetailsId studentDetailsId = new StudentDetailsId("ST_001", "SUB_002");
-        //testEntityManager.persist(studentDetailsId);
-        Set<Subject> subjects1 = new HashSet<>();
-        Semester semester = new Semester("SEM1", "Semester One",subjects1);
-        testEntityManager.persist(semester);
-        Subject subject = new Subject("SUB_001", "physics",semester);
-
-        Set<Subject> subjects = new HashSet<>();
-        subjects.add(subject);
-        testEntityManager.persist(subject);
-
-        StudentDetails studentDetails = new StudentDetails(studentDetailsId, student, subject,100);
-        testEntityManager.persist(studentDetails);
 
         List<Object[]> departmentTopperMarksList = repository.fetchStudentMarksForTopper("DEPT_CS");
 
@@ -138,4 +105,3 @@ class StudentRepositoryTest {
         assertThat(departmentWisePassPercentageRecord[5]).isNotNull();
     }
 }
-*/
