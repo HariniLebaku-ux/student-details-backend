@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.pip.studentdetails.backend.entity.SemesterTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-02-22T20:23:34" hostname="BDC6-L-141HVWQ" time="0.025">
+<testsuite name="com.pip.studentdetails.backend.entity.SemesterTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-02-22T21:11:27" hostname="BDC6-L-141HVWQ" time="0.026">
   <properties/>
-  <testcase name="semesterDefaultConstructor_success()" classname="com.pip.studentdetails.backend.entity.SemesterTest" time="0.008"/>
+  <testcase name="semesterDefaultConstructor_success()" classname="com.pip.studentdetails.backend.entity.SemesterTest" time="0.007"/>
   <testcase name="modifySubjects_addAndRemove_shouldReflectInCollection()" classname="com.pip.studentdetails.backend.entity.SemesterTest" time="0.006"/>
   <testcase name="semesterConvenienceConstructor_success()" classname="com.pip.studentdetails.backend.entity.SemesterTest" time="0.001"/>
   <testcase name="subjectsCollection_shouldPreserveInsertionOrder()" classname="com.pip.studentdetails.backend.entity.SemesterTest" time="0.001"/>

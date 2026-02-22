@@ -68,6 +68,20 @@ class StudentBackendControllerTest {
     }
 
     @Test
+    void createStudentSuccess_returns201AndBody() throws Exception {
+        StudentRequest request = new StudentRequest("ST_001","John","DEPT_CS", "A");
+        Mockito.doNothing().when(studentBackendService).createStudent(Mockito.any());
+
+        mockMvc.perform(post("/backend/create-student")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(mapper.writeValueAsString(request)))
+                .andExpect(status().isCreated())
+                .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
+                .andExpect(jsonPath("$.status").value(201))
+                .andExpect(jsonPath("$.message").value("Student Inserted Sucessfully"));
+    }
+
+    @Test
     void createStudentValidationFailure() throws Exception {
         StudentRequest request = new StudentRequest(null, null,null, null);
         Mockito.doNothing()
@@ -78,6 +92,29 @@ class StudentBackendControllerTest {
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(mapper.writeValueAsString(request)))
                 .andExpect(status().isBadRequest());
+    }
+
+    @Test
+    void createStudent_getMethodNotAllowed_405() throws Exception {
+        mockMvc.perform(get("/backend/create-student"))
+                .andExpect(status().isMethodNotAllowed());
+    }
+
+    @Test
+    void createStudent_emptyBody_500() throws Exception {
+        mockMvc.perform(post("/backend/create-student")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(""))
+                .andExpect(status().isInternalServerError());
+    }
+
+    @Test
+    void createStudent_malformedJson_500() throws Exception {
+        String malformed = "{ \"studentId\": \"ST_001\", "; // truncated JSON
+        mockMvc.perform(post("/backend/create-student")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(malformed))
+                .andExpect(status().isInternalServerError());
     }
 
     @Test

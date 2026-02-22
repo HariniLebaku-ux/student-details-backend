@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.pip.studentdetails.backend.exception.ApiErrorResponseTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2026-02-22T20:23:35" hostname="BDC6-L-141HVWQ" time="0.015">
+<testsuite name="com.pip.studentdetails.backend.exception.ApiErrorResponseTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2026-02-22T21:11:27" hostname="BDC6-L-141HVWQ" time="0.017">
   <properties/>
   <testcase name="emptyStrings_ShouldBeReturnedAsIs()" classname="com.pip.studentdetails.backend.exception.ApiErrorResponseTest" time="0.01"/>
   <testcase name="nullValues_ShouldBeAccepted()" classname="com.pip.studentdetails.backend.exception.ApiErrorResponseTest" time="0.001"/>
-  <testcase name="constructorAndGetters_ShouldWork()" classname="com.pip.studentdetails.backend.exception.ApiErrorResponseTest" time="0.0"/>
-  <testcase name="equalityContract_IsDefaultObjectEquality()" classname="com.pip.studentdetails.backend.exception.ApiErrorResponseTest" time="0.002"/>
+  <testcase name="constructorAndGetters_ShouldWork()" classname="com.pip.studentdetails.backend.exception.ApiErrorResponseTest" time="0.001"/>
+  <testcase name="equalityContract_IsDefaultObjectEquality()" classname="com.pip.studentdetails.backend.exception.ApiErrorResponseTest" time="0.003"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

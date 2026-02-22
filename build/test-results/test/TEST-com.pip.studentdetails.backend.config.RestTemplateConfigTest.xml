@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.pip.studentdetails.backend.config.RestTemplateConfigTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-02-22T20:23:31" hostname="BDC6-L-141HVWQ" time="0.291">
+<testsuite name="com.pip.studentdetails.backend.config.RestTemplateConfigTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-02-22T21:11:23" hostname="BDC6-L-141HVWQ" time="0.297">
   <properties/>
-  <testcase name="testRestTemplateBeanCreation()" classname="com.pip.studentdetails.backend.config.RestTemplateConfigTest" time="0.291"/>
+  <testcase name="testRestTemplateBeanCreation()" classname="com.pip.studentdetails.backend.config.RestTemplateConfigTest" time="0.297"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

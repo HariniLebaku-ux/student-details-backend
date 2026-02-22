@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.pip.studentdetails.backend.exception.StudentAlreadyExistExceptionTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-02-22T20:23:35" hostname="BDC6-L-141HVWQ" time="0.005">
+<testsuite name="com.pip.studentdetails.backend.exception.StudentAlreadyExistExceptionTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-02-22T21:11:27" hostname="BDC6-L-141HVWQ" time="0.005">
   <properties/>
   <testcase name="shouldThrowStudentAlreadyExistsException()" classname="com.pip.studentdetails.backend.exception.StudentAlreadyExistExceptionTest" time="0.003"/>
   <testcase name="studentAlreadyExistExceptionMessage_Success()" classname="com.pip.studentdetails.backend.exception.StudentAlreadyExistExceptionTest" time="0.001"/>
