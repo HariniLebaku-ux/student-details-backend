@@ -26,19 +26,19 @@ class DepartmentTopperTest {
 
     @Test
     void equalsAndHashCodeShouldWorkForSameValues() {
-        DepartmentTopper a = new DepartmentTopper("ST_001", "Radha", "SEM_1", "SUB_008", 92, "DEPT_CS");
-        DepartmentTopper b = new DepartmentTopper("ST_001", "Radha", "SEM_1", "SUB_008", 92, "DEPT_CS");
+        DepartmentTopper topper1 = new DepartmentTopper("ST_001", "Radha", "SEM_1", "SUB_008", 92, "DEPT_CS");
+        DepartmentTopper topper2 = new DepartmentTopper("ST_001", "Radha", "SEM_1", "SUB_008", 92, "DEPT_CS");
 
-        assertEquals(a, b);
-        assertEquals(a.hashCode(), b.hashCode());
+        assertEquals(topper1, topper2);
+        assertEquals(topper1.hashCode(), topper2.hashCode());
     }
 
     @Test
     void equalsShouldDifferForDifferentValues() {
-        DepartmentTopper a = new DepartmentTopper("ST_001", "Radha", "SEM_1", "SUB_008", 92, "DEPT_CS");
-        DepartmentTopper c = new DepartmentTopper("ST_002", "Kiran", "SEM_1", "SUB_008", 92, "DEPT_CS");
+        DepartmentTopper topper1 = new DepartmentTopper("ST_001", "Radha", "SEM_1", "SUB_008", 92, "DEPT_CS");
+        DepartmentTopper topper2 = new DepartmentTopper("ST_002", "Kiran", "SEM_1", "SUB_008", 92, "DEPT_CS");
 
-        assertNotEquals(a, c);
+        assertNotEquals(topper1, topper2);
     }
 
     @Test

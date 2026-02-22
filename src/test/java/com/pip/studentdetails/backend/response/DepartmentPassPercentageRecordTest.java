@@ -10,7 +10,7 @@ class DepartmentPassPercentageRecordTest {
     @Test
     @DisplayName("Accessor methods should return constructor values")
     void accessors_ShouldReturnValues() {
-        DepartmentPassPercentageRecord record = new DepartmentPassPercentageRecord(
+        DepartmentPassPercentageRecord departmentPassPercentageRecord = new DepartmentPassPercentageRecord(
                 "Computer Science and Engineering",
                 "SEM_1",
                 "SUB_001",
@@ -19,18 +19,18 @@ class DepartmentPassPercentageRecordTest {
                 85
         );
 
-        assertThat(record.departmentName()).isEqualTo("Computer Science and Engineering");
-        assertThat(record.semesterId()).isEqualTo("SEM_1");
-        assertThat(record.subjectId()).isEqualTo("SUB_001");
-        assertThat(record.subjectName()).isEqualTo("English");
-        assertThat(record.section()).isEqualTo("A");
-        assertThat(record.marks()).isEqualTo(85);
+        assertThat(departmentPassPercentageRecord.departmentName()).isEqualTo("Computer Science and Engineering");
+        assertThat(departmentPassPercentageRecord.semesterId()).isEqualTo("SEM_1");
+        assertThat(departmentPassPercentageRecord.subjectId()).isEqualTo("SUB_001");
+        assertThat(departmentPassPercentageRecord.subjectName()).isEqualTo("English");
+        assertThat(departmentPassPercentageRecord.section()).isEqualTo("A");
+        assertThat(departmentPassPercentageRecord.marks()).isEqualTo(85);
     }
 
     @Test
     @DisplayName("Record equality and hashCode should be structural")
     void equality_ShouldBeStructural() {
-        DepartmentPassPercentageRecord r1 = new DepartmentPassPercentageRecord(
+        DepartmentPassPercentageRecord departmentPassPercentageRecord = new DepartmentPassPercentageRecord(
                 "CS", "SEM_1", "SUB_1", "OS", "A", 90
         );
         DepartmentPassPercentageRecord r2 = new DepartmentPassPercentageRecord(
@@ -40,20 +40,20 @@ class DepartmentPassPercentageRecordTest {
                 "EC", "SEM_2", "SUB_2", "DSP", "B", 70
         );
 
-        assertThat(r1).isEqualTo(r2);
-        assertThat(r1.hashCode()).isEqualTo(r2.hashCode());
+        assertThat(departmentPassPercentageRecord).isEqualTo(r2);
+        assertThat(departmentPassPercentageRecord.hashCode()).isEqualTo(r2.hashCode());
 
-        assertThat(r1).isNotEqualTo(r3);
+        assertThat(departmentPassPercentageRecord).isNotEqualTo(r3);
     }
 
     @Test
     @DisplayName("toString() should include field names and values")
     void toString_ShouldContainFields() {
-        DepartmentPassPercentageRecord record = new DepartmentPassPercentageRecord(
+        DepartmentPassPercentageRecord departmentPassPercentageRecord = new DepartmentPassPercentageRecord(
                 "CS", "SEM_1", "SUB_1", "OS", "A", 88
         );
 
-        String str = record.toString();
+        String str = departmentPassPercentageRecord.toString();
 
         assertThat(str).contains("DepartmentPassPercentageRecord");
         assertThat(str).contains("departmentName=CS");
@@ -67,15 +67,15 @@ class DepartmentPassPercentageRecordTest {
     @Test
     @DisplayName("Null values should be stored for reference types")
     void nullValues_ShouldBeAllowed() {
-        DepartmentPassPercentageRecord record = new DepartmentPassPercentageRecord(
+        DepartmentPassPercentageRecord departmentPassPercentageRecord = new DepartmentPassPercentageRecord(
                 null, null, null, null, null, 0
         );
 
-        assertThat(record.departmentName()).isNull();
-        assertThat(record.semesterId()).isNull();
-        assertThat(record.subjectId()).isNull();
-        assertThat(record.subjectName()).isNull();
-        assertThat(record.section()).isNull();
-        assertThat(record.marks()).isZero();
+        assertThat(departmentPassPercentageRecord.departmentName()).isNull();
+        assertThat(departmentPassPercentageRecord.semesterId()).isNull();
+        assertThat(departmentPassPercentageRecord.subjectId()).isNull();
+        assertThat(departmentPassPercentageRecord.subjectName()).isNull();
+        assertThat(departmentPassPercentageRecord.section()).isNull();
+        assertThat(departmentPassPercentageRecord.marks()).isZero();
     }
 }

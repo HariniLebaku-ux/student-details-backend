@@ -8,7 +8,7 @@ class DepartmentTopperRecordTest {
 
     @Test
     void shouldCreateRecordAndExposeValues() {
-        DepartmentTopperRecord r = new DepartmentTopperRecord(
+        DepartmentTopperRecord departmentTopperRecord = new DepartmentTopperRecord(
                 "ST_012",
                 "Radha",
                 92.5,
@@ -16,11 +16,11 @@ class DepartmentTopperRecordTest {
                 "Information Technology"
         );
 
-        assertEquals("ST_012", r.studentId());
-        assertEquals("Radha", r.studentName());
-        assertEquals(92.5, r.percentage());
-        assertEquals("SEM_1", r.semesterId());
-        assertEquals("Information Technology", r.departmentName());
+        assertEquals("ST_012", departmentTopperRecord.studentId());
+        assertEquals("Radha", departmentTopperRecord.studentName());
+        assertEquals(92.5, departmentTopperRecord.percentage());
+        assertEquals("SEM_1", departmentTopperRecord.semesterId());
+        assertEquals("Information Technology", departmentTopperRecord.departmentName());
     }
 
     @Test

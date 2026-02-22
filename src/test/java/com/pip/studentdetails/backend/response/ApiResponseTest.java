@@ -10,10 +10,10 @@ class ApiResponseTest {
     @Test
     @DisplayName("Accessors should return constructor values")
     void accessors_ShouldReturnValues() {
-        ApiResponse<Void> resp = new ApiResponse<>(200, "OK");
+        ApiResponse<Void> apiResponse = new ApiResponse<>(200, "OK");
 
-        assertThat(resp.status()).isEqualTo(200);
-        assertThat(resp.message()).isEqualTo("OK");
+        assertThat(apiResponse.status()).isEqualTo(200);
+        assertThat(apiResponse.message()).isEqualTo("OK");
     }
 
     @Test
@@ -30,9 +30,9 @@ class ApiResponseTest {
     @Test
     @DisplayName("toString should contain component names and values")
     void toString_ShouldContainFields() {
-        ApiResponse<Void> resp = new ApiResponse<>(400, "Bad Request");
+        ApiResponse<Void> apiResponse = new ApiResponse<>(400, "Bad Request");
 
-        String s = resp.toString();
+        String s = apiResponse.toString();
         assertThat(s).contains("ApiResponse");
         assertThat(s).contains("status=400");
         assertThat(s).contains("message=Bad Request");
@@ -41,19 +41,19 @@ class ApiResponseTest {
     @Test
     @DisplayName("Record should work with different generic types at compile-time")
     void generics_ShouldCompileAndWork() {
-        ApiResponse<String> r1 = new ApiResponse<>(201, "Created");
-        ApiResponse<Integer> r2 = new ApiResponse<>(202, "Accepted");
+        ApiResponse<String> apiResponse1 = new ApiResponse<>(201, "Created");
+        ApiResponse<Integer> apiResponse2 = new ApiResponse<>(202, "Accepted");
 
-        assertThat(r1.status()).isEqualTo(201);
-        assertThat(r1.message()).isEqualTo("Created");
-        assertThat(r2.status()).isEqualTo(202);
-        assertThat(r2.message()).isEqualTo("Accepted");
+        assertThat(apiResponse1.status()).isEqualTo(201);
+        assertThat(apiResponse1.message()).isEqualTo("Created");
+        assertThat(apiResponse2.status()).isEqualTo(202);
+        assertThat(apiResponse2.message()).isEqualTo("Accepted");
     }
 
     @Test
     @DisplayName("Null message should be accepted and preserved")
     void nullMessage_ShouldBeAllowed() {
-        ApiResponse<Void> resp = new ApiResponse<>(500, null);
-        assertThat(resp.message()).isNull();
+        ApiResponse<Void> apiResponse = new ApiResponse<>(500, null);
+        assertThat(apiResponse.message()).isNull();
     }
 }

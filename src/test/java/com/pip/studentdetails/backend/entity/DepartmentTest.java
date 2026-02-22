@@ -1,7 +1,5 @@
-/*
 package com.pip.studentdetails.backend.entity;
 
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import java.util.LinkedHashSet;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -28,4 +26,4 @@ class DepartmentTest {
         assertThat(d.getDepartmentName()).isEqualTo("Information Technology");
         assertThat(d.getStudents()).isNotNull(); // initialized in field declaration
     }
-}*/
+}

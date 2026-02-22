@@ -7,7 +7,7 @@ class PassPercentageReportTest {
 
     @Test
     void shouldCreateRecordAndExposeValues() {
-        PassPercentageReport r = new PassPercentageReport(
+        PassPercentageReport passPercentageReport = new PassPercentageReport(
                 "Electronics and Communication Engineering",
                 "SEM_1",
                 "SUB_020",
@@ -16,35 +16,35 @@ class PassPercentageReportTest {
                 85.5
         );
 
-        assertEquals("Electronics and Communication Engineering", r.departmentName());
-        assertEquals("SEM_1", r.semesterId());
-        assertEquals("SUB_020", r.subjectId());
-        assertEquals("ECE Subject 4", r.subjectName());
-        assertEquals("A", r.section());
-        assertEquals(85.5, r.percentage());
+        assertEquals("Electronics and Communication Engineering", passPercentageReport.departmentName());
+        assertEquals("SEM_1", passPercentageReport.semesterId());
+        assertEquals("SUB_020", passPercentageReport.subjectId());
+        assertEquals("ECE Subject 4", passPercentageReport.subjectName());
+        assertEquals("A", passPercentageReport.section());
+        assertEquals(85.5, passPercentageReport.percentage());
     }
 
     @Test
     void equalsAndHashCodeShouldWorkForSameValues() {
-        PassPercentageReport a = new PassPercentageReport("DEPT_ECE", "SEM_1", "SUB_020", "ECE Sub4", "A", 90.0);
-        PassPercentageReport b = new PassPercentageReport("DEPT_ECE", "SEM_1", "SUB_020", "ECE Sub4", "A", 90.0);
+        PassPercentageReport passPercentageReport1 = new PassPercentageReport("DEPT_ECE", "SEM_1", "SUB_020", "ECE Sub4", "A", 90.0);
+        PassPercentageReport passPercentageReport2 = new PassPercentageReport("DEPT_ECE", "SEM_1", "SUB_020", "ECE Sub4", "A", 90.0);
 
-        assertEquals(a, b);
-        assertEquals(a.hashCode(), b.hashCode());
+        assertEquals(passPercentageReport1, passPercentageReport2);
+        assertEquals(passPercentageReport1.hashCode(), passPercentageReport2.hashCode());
     }
 
     @Test
     void equalsShouldDifferForDifferentValues() {
-        PassPercentageReport a = new PassPercentageReport("DEPT_ECE", "SEM_1", "SUB_020", "ECE Sub4", "A", 90.0);
-        PassPercentageReport c = new PassPercentageReport("DEPT_ECE", "SEM_1", "SUB_020", "ECE Sub4", "B", 90.0);
+        PassPercentageReport passPercentageReport1 = new PassPercentageReport("DEPT_ECE", "SEM_1", "SUB_020", "ECE Sub4", "A", 90.0);
+        PassPercentageReport passPercentageReport2 = new PassPercentageReport("DEPT_ECE", "SEM_1", "SUB_020", "ECE Sub4", "B", 90.0);
 
-        assertNotEquals(a, c);
+        assertNotEquals(passPercentageReport1, passPercentageReport2);
     }
 
     @Test
     void toStringShouldContainFieldNamesAndValues() {
-        PassPercentageReport r = new PassPercentageReport("DEPT_ECE", "SEM_1", "SUB_020", "ECE Sub4", "A", 90.25);
-        String s = r.toString();
+        PassPercentageReport passPercentageReport2 = new PassPercentageReport("DEPT_ECE", "SEM_1", "SUB_020", "ECE Sub4", "A", 90.25);
+        String s = passPercentageReport2.toString();
 
         assertTrue(s.contains("PassPercentageReport"));
         assertTrue(s.contains("departmentName=DEPT_ECE"));
@@ -57,14 +57,14 @@ class PassPercentageReportTest {
 
     @Test
     void nullStringsAreAllowedUnlessValidatedElsewhere() {
-        PassPercentageReport r = new PassPercentageReport(null, null, null, null, null, 0.0);
+        PassPercentageReport passPercentageReport = new PassPercentageReport(null, null, null, null, null, 0.0);
 
-        assertNull(r.departmentName());
-        assertNull(r.semesterId());
-        assertNull(r.subjectId());
-        assertNull(r.subjectName());
-        assertNull(r.section());
-        assertEquals(0.0, r.percentage());
+        assertNull(passPercentageReport.departmentName());
+        assertNull(passPercentageReport.semesterId());
+        assertNull(passPercentageReport.subjectId());
+        assertNull(passPercentageReport.subjectName());
+        assertNull(passPercentageReport.section());
+        assertEquals(0.0, passPercentageReport.percentage());
     }
 
     @Test
@@ -78,7 +78,7 @@ class PassPercentageReportTest {
 
     @Test
     void floatingPointPrecisionComparison() {
-        PassPercentageReport r = new PassPercentageReport("DEPT_ECE", "SEM_1", "SUB_1", "ECE Sub4", "A", 83.3333333);
-        assertEquals(83.3333333, r.percentage(), 1e-9); // delta-based compare
+        PassPercentageReport passPercentageReport = new PassPercentageReport("DEPT_ECE", "SEM_1", "SUB_1", "ECE Sub4", "A", 83.3333333);
+        assertEquals(83.3333333, passPercentageReport.percentage(), 1e-9); // delta-based compare
     }
 }
