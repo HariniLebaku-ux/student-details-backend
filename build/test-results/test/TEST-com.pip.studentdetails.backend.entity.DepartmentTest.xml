@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.pip.studentdetails.backend.entity.DepartmentTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-02-22T21:45:35" hostname="BDC6-L-141HVWQ" time="0.049">
+<testsuite name="com.pip.studentdetails.backend.entity.DepartmentTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-02-22T22:29:53" hostname="BDC6-L-141HVWQ" time="0.057">
   <properties/>
-  <testcase name="convenienceCtor()" classname="com.pip.studentdetails.backend.entity.DepartmentTest" time="0.048"/>
+  <testcase name="convenienceCtor()" classname="com.pip.studentdetails.backend.entity.DepartmentTest" time="0.055"/>
   <testcase name="defaultCtor_success()" classname="com.pip.studentdetails.backend.entity.DepartmentTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

@@ -1,15 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
-<testsuite name="com.pip.studentdetails.backend.exception.StudentAlreadyExistExceptionTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-02-22T22:07:55" hostname="BDC6-L-141HVWQ" time="0.011">
+<testsuite name="com.pip.studentdetails.backend.exception.StudentAlreadyExistExceptionTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-02-22T22:29:53" hostname="BDC6-L-141HVWQ" time="0.007">
   <properties/>
   <testcase name="shouldThrowStudentAlreadyExistsException()" classname="com.pip.studentdetails.backend.exception.StudentAlreadyExistExceptionTest" time="0.005"/>
-  <testcase name="studentAlreadyExistExceptionMessage_Success()" classname="com.pip.studentdetails.backend.exception.StudentAlreadyExistExceptionTest" time="0.004"/>
-=======
-<testsuite name="com.pip.studentdetails.backend.exception.StudentAlreadyExistExceptionTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-02-22T21:45:35" hostname="BDC6-L-141HVWQ" time="0.006">
-  <properties/>
-  <testcase name="shouldThrowStudentAlreadyExistsException()" classname="com.pip.studentdetails.backend.exception.StudentAlreadyExistExceptionTest" time="0.003"/>
-  <testcase name="studentAlreadyExistExceptionMessage_Success()" classname="com.pip.studentdetails.backend.exception.StudentAlreadyExistExceptionTest" time="0.002"/>
->>>>>>> e95222cb62b9fce4b467f4f08347e56624851f27
+  <testcase name="studentAlreadyExistExceptionMessage_Success()" classname="com.pip.studentdetails.backend.exception.StudentAlreadyExistExceptionTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
