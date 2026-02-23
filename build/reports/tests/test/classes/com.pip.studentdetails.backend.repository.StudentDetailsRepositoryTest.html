@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - StudentDetailsRepositoryTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>StudentDetailsRepositoryTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/com.pip.studentdetails.backend.repository.html">com.pip.studentdetails.backend.repository</a> &gt; StudentDetailsRepositoryTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">1</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.771s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">insertStudent_FailDuplicateKey()</td>
+<td class="success">0.771s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>10:19:34.961 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+10:19:35.034 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+10:19:35.243 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.pip.studentdetails.backend.repository.StudentDetailsRepositoryTest] from class [org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper]
+10:19:35.306 [Test worker] INFO org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.pip.studentdetails.backend.repository.StudentDetailsRepositoryTest], using SpringBootContextLoader
+10:19:35.331 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.pip.studentdetails.backend.repository.StudentDetailsRepositoryTest]: class path resource [com/pip/studentdetails/backend/repository/StudentDetailsRepositoryTest-context.xml] does not exist
+10:19:35.332 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.pip.studentdetails.backend.repository.StudentDetailsRepositoryTest]: class path resource [com/pip/studentdetails/backend/repository/StudentDetailsRepositoryTestContext.groovy] does not exist
+10:19:35.333 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.pip.studentdetails.backend.repository.StudentDetailsRepositoryTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+10:19:35.335 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.pip.studentdetails.backend.repository.StudentDetailsRepositoryTest]: StudentDetailsRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+10:19:35.956 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [C:\Users\harini.lebaku\Downloads\Harini\Harini\Project internal\student-details-backend\build\classes\java\main\com\pip\studentdetails\backend\StudentBackendApplication.class]
+10:19:35.961 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.pip.studentdetails.backend.StudentBackendApplication for test class com.pip.studentdetails.backend.repository.StudentDetailsRepositoryTest
+10:19:35.977 [Test worker] DEBUG org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper - @TestExecutionListeners is not present for class [com.pip.studentdetails.backend.repository.StudentDetailsRepositoryTest]: using defaults.
+10:19:35.980 [Test worker] INFO org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+10:19:36.109 [Test worker] INFO org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@3d19d85, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@2ae62bb6, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@68ed3f30, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@56b859a6, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@590adb41, org.springframework.test.context.support.DirtiesContextTestExecutionListener@42aae04d, org.springframework.test.context.transaction.TransactionalTestExecutionListener@43bf5397, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@575e572f, org.springframework.test.context.event.EventPublishingTestExecutionListener@58015e56, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@4d3c6593, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@7426a448, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@516462cc, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@3456558, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@2dfb885e, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@6cbe7d4d]
+10:19:36.131 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@2f7efd0b testClass = StudentDetailsRepositoryTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [MergedContextConfiguration@41ad373 testClass = StudentDetailsRepositoryTest, locations = '{}', classes = '{class com.pip.studentdetails.backend.StudentBackendApplication}', contextInitializerClasses = '[]', activeProfiles = '{test}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.OverrideAutoConfigurationContextCustomizerFactory$DisableAutoConfigurationContextCustomizer@49206065, org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@4f5f6e45, org.springframework.boot.test.autoconfigure.filter.TypeExcludeFiltersContextCustomizer@351584c0, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@4f2c126f, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@1894593a, [ImportsContextCustomizer@6801b414 key = [org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration, org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration, org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManagerAutoConfiguration, org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration, org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration, org.springframework.boot.autoconfigure.sql.init.SqlInitializationAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration, org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration, org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration, org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@42ea287, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@65a48602, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@0], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map[[empty]]], class annotated with @DirtiesContext [false] with mode [null].
+10:19:36.205 [Test worker] DEBUG org.springframework.test.context.support.DependencyInjectionTestExecutionListener - Performing dependency injection for test context [[DefaultTestContext@2f7efd0b testClass = StudentDetailsRepositoryTest, testInstance = com.pip.studentdetails.backend.repository.StudentDetailsRepositoryTest@6949e948, testMethod = [null], testException = [null], mergedContextConfiguration = [MergedContextConfiguration@41ad373 testClass = StudentDetailsRepositoryTest, locations = '{}', classes = '{class com.pip.studentdetails.backend.StudentBackendApplication}', contextInitializerClasses = '[]', activeProfiles = '{test}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.OverrideAutoConfigurationContextCustomizerFactory$DisableAutoConfigurationContextCustomizer@49206065, org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@4f5f6e45, org.springframework.boot.test.autoconfigure.filter.TypeExcludeFiltersContextCustomizer@351584c0, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@4f2c126f, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@1894593a, [ImportsContextCustomizer@6801b414 key = [org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration, org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration, org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManagerAutoConfiguration, org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration, org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration, org.springframework.boot.autoconfigure.sql.init.SqlInitializationAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration, org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration, org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration, org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@42ea287, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@65a48602, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@0], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -&gt; false]]].
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::               (v2.7.18)
+
+2026-02-23 10:19:38.419  INFO 15996 --- [    Test worker] c.p.s.b.r.StudentDetailsRepositoryTest   : Starting StudentDetailsRepositoryTest using Java 17.0.12 on bdc6-l-141hvwq with PID 15996 (started by harini.lebaku in C:\Users\harini.lebaku\Downloads\Harini\Harini\Project internal\student-details-backend)
+2026-02-23 10:19:38.423  INFO 15996 --- [    Test worker] c.p.s.b.r.StudentDetailsRepositoryTest   : The following 1 profile is active: &quot;test&quot;
+2026-02-23 10:19:39.978  INFO 15996 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-23 10:19:40.262  INFO 15996 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 246 ms. Found 2 JPA repository interfaces.
+2026-02-23 10:19:40.469  INFO 15996 --- [    Test worker] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
+2026-02-23 10:19:41.206  INFO 15996 --- [    Test worker] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:1027a8c3-e97f-4dd0-b85f-f6367d6fa835;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2026-02-23 10:19:43.369  INFO 15996 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-23 10:19:43.766  INFO 15996 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2026-02-23 10:19:44.724  INFO 15996 --- [    Test worker] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2026-02-23 10:19:45.289  INFO 15996 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+Hibernate: drop table if exists department CASCADE 
+Hibernate: drop table if exists semester CASCADE 
+Hibernate: drop table if exists student CASCADE 
+Hibernate: drop table if exists student_details CASCADE 
+Hibernate: drop table if exists subject CASCADE 
+Hibernate: create table department (department_id varchar(255) not null, department_name varchar(255) not null, primary key (department_id))
+Hibernate: create table semester (semester_id varchar(255) not null, semester_name varchar(255) not null, primary key (semester_id))
+Hibernate: create table student (student_id varchar(255) not null, section varchar(255) not null, student_name varchar(255) not null, department_id varchar(255) not null, primary key (student_id))
+Hibernate: create table student_details (student_id varchar(255) not null, subject_id varchar(255) not null, marks integer, primary key (student_id, subject_id))
+Hibernate: create table subject (subject_id varchar(255) not null, subject_name varchar(255) not null, semester_id varchar(255) not null, primary key (subject_id))
+Hibernate: alter table student add constraint FKkh3m8c2tq2tgrgma1iyn7tvmx foreign key (department_id) references department
+Hibernate: alter table student_details add constraint FKh0pjn1torhdht0xmsohf3stb2 foreign key (student_id) references student
+Hibernate: alter table student_details add constraint FK5um95ya67whd79u94xjn44v0y foreign key (subject_id) references subject
+Hibernate: alter table subject add constraint FKmphheehxn35mmxxh67nnexukv foreign key (semester_id) references semester
+2026-02-23 10:19:48.315  INFO 15996 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2026-02-23 10:19:48.346  INFO 15996 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-23 10:19:49.965  INFO 15996 --- [    Test worker] c.p.s.b.r.StudentDetailsRepositoryTest   : Started StudentDetailsRepositoryTest in 13.577 seconds (JVM running for 18.448)
+2026-02-23 10:19:50.036  INFO 15996 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@2f7efd0b testClass = StudentDetailsRepositoryTest, testInstance = com.pip.studentdetails.backend.repository.StudentDetailsRepositoryTest@6949e948, testMethod = insertStudent_FailDuplicateKey@StudentDetailsRepositoryTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@41ad373 testClass = StudentDetailsRepositoryTest, locations = '{}', classes = '{class com.pip.studentdetails.backend.StudentBackendApplication}', contextInitializerClasses = '[]', activeProfiles = '{test}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.OverrideAutoConfigurationContextCustomizerFactory$DisableAutoConfigurationContextCustomizer@49206065, org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@4f5f6e45, org.springframework.boot.test.autoconfigure.filter.TypeExcludeFiltersContextCustomizer@351584c0, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@4f2c126f, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@1894593a, [ImportsContextCustomizer@6801b414 key = [org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration, org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration, org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManagerAutoConfiguration, org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration, org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration, org.springframework.boot.autoconfigure.sql.init.SqlInitializationAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration, org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration, org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration, org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@42ea287, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@65a48602, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@0], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -&gt; false]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@4e5b0a90]; rollback [true]
+Hibernate: INSERT INTO student_details(student_id, subject_id, marks)
+VALUES (?, ?, ?)
+Hibernate: INSERT INTO student_details(student_id, subject_id, marks)
+VALUES (?, ?, ?)
+2026-02-23 10:19:50.737  WARN 15996 --- [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 23505, SQLState: 23505
+2026-02-23 10:19:50.737 ERROR 15996 --- [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : Unique index or primary key violation: &quot;PUBLIC.PRIMARY_KEY_C ON PUBLIC.STUDENT_DETAILS(STUDENT_ID, SUBJECT_ID) VALUES ( /* key:216 */ 'ST_018', 'SUB_016')&quot;; SQL statement:
+INSERT INTO student_details(student_id, subject_id, marks)
+VALUES (?, ?, ?) [23505-214]
+2026-02-23 10:19:50.758  INFO 15996 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@2f7efd0b testClass = StudentDetailsRepositoryTest, testInstance = com.pip.studentdetails.backend.repository.StudentDetailsRepositoryTest@6949e948, testMethod = insertStudent_FailDuplicateKey@StudentDetailsRepositoryTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@41ad373 testClass = StudentDetailsRepositoryTest, locations = '{}', classes = '{class com.pip.studentdetails.backend.StudentBackendApplication}', contextInitializerClasses = '[]', activeProfiles = '{test}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.OverrideAutoConfigurationContextCustomizerFactory$DisableAutoConfigurationContextCustomizer@49206065, org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@4f5f6e45, org.springframework.boot.test.autoconfigure.filter.TypeExcludeFiltersContextCustomizer@351584c0, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@4f2c126f, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@1894593a, [ImportsContextCustomizer@6801b414 key = [org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration, org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration, org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManagerAutoConfiguration, org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration, org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration, org.springframework.boot.autoconfigure.sql.init.SqlInitializationAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration, org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration, org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration, org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@42ea287, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@65a48602, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@0], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -&gt; false]]
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 7.6</a> at Feb 23, 2026, 10:19:51 AM</p>
+</div>
+</div>
+</body>
+</html>

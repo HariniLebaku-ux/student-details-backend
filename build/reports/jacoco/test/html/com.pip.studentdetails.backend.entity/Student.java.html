@@ -36,51 +36,51 @@ public class Student {
     /**
      * Default constructor required by JPA.
      */
-<span class="fc" id="L39">    public Student() {}</span>
+<span class="nc" id="L39">    public Student() {}</span>
 
     /** @return the student ID */
     public String getStudentId() {
-<span class="fc" id="L43">        return studentId;</span>
+<span class="nc" id="L43">        return studentId;</span>
     }
 
     /** @param studentId sets the student ID */
     public void setStudentId(String studentId) {
-<span class="fc" id="L48">        this.studentId = studentId;</span>
-<span class="fc" id="L49">    }</span>
+<span class="nc" id="L48">        this.studentId = studentId;</span>
+<span class="nc" id="L49">    }</span>
 
-<span class="fc" id="L51">    public String getStudentName() {return studentName;}</span>
+<span class="nc" id="L51">    public String getStudentName() {return studentName;}</span>
 
-<span class="fc" id="L53">    public void setStudentName(String studentName) {this.studentName = studentName;</span>
-<span class="fc" id="L54">    }</span>
+<span class="nc" id="L53">    public void setStudentName(String studentName) {this.studentName = studentName;</span>
+<span class="nc" id="L54">    }</span>
 
     /**@return the Department entity linked to this student*/
     public Department getDepartmentId() {
-<span class="fc" id="L58">        return departmentId;</span>
+<span class="nc" id="L58">        return departmentId;</span>
     }
 
     /** @param departmentId sets the department association */
     public void setDepartmentId(Department departmentId) {
-<span class="fc" id="L63">        this.departmentId = departmentId;</span>
-<span class="fc" id="L64">    }</span>
+<span class="nc" id="L63">        this.departmentId = departmentId;</span>
+<span class="nc" id="L64">    }</span>
 
     /** @return the section identifier */
     public String getSectionId() {
-<span class="fc" id="L68">        return sectionId;</span>
+<span class="nc" id="L68">        return sectionId;</span>
     }
 
     /** @param sectionId sets the section identifier */
     public void setSectionId(String sectionId) {
-<span class="fc" id="L73">        this.sectionId = sectionId;</span>
-<span class="fc" id="L74">    }</span>
+<span class="nc" id="L73">        this.sectionId = sectionId;</span>
+<span class="nc" id="L74">    }</span>
 
     /**
      * Convenience constructor to create a Student object.
      */
-<span class="fc" id="L79">    public Student(String studentId, String studentName,Department departmentId, String sectionId) {</span>
-<span class="fc" id="L80">        this.studentId = studentId;</span>
-<span class="fc" id="L81">        this.studentName = studentName;</span>
-<span class="fc" id="L82">        this.departmentId = departmentId;</span>
-<span class="fc" id="L83">        this.sectionId = sectionId;</span>
-<span class="fc" id="L84">    }</span>
+<span class="nc" id="L79">    public Student(String studentId, String studentName,Department departmentId, String sectionId) {</span>
+<span class="nc" id="L80">        this.studentId = studentId;</span>
+<span class="nc" id="L81">        this.studentName = studentName;</span>
+<span class="nc" id="L82">        this.departmentId = departmentId;</span>
+<span class="nc" id="L83">        this.sectionId = sectionId;</span>
+<span class="nc" id="L84">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

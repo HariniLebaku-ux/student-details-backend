@@ -266,7 +266,7 @@ INSERT INTO student_details (student_id, subject_id, marks) VALUES ('ST_018', 'S
 INSERT INTO student_details (student_id, subject_id, marks) VALUES ('ST_018', 'SUB_013', 100);
 INSERT INTO student_details (student_id, subject_id, marks) VALUES ('ST_018', 'SUB_014', 100);
 INSERT INTO student_details (student_id, subject_id, marks) VALUES ('ST_018', 'SUB_015', 100);
-INSERT INTO student_details (student_id, subject_id, marks) VALUES ('ST_018', 'SUB_016', 100);
+
 
 
 

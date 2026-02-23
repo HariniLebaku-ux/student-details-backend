@@ -26,31 +26,31 @@ public class Department {
     /**
      * One-to-Many relationship, One department can have multiple students.
      * */
-<span class="fc" id="L29">    @OneToMany(mappedBy = &quot;departmentId&quot;, cascade = CascadeType.ALL, orphanRemoval = false)</span>
+<span class="nc" id="L29">    @OneToMany(mappedBy = &quot;departmentId&quot;, cascade = CascadeType.ALL, orphanRemoval = false)</span>
     private Set&lt;Student&gt; students = new LinkedHashSet&lt;&gt;();
 
     /**
      * Default constructor (required by JPA).
      */
-<span class="fc" id="L35">    public Department() {}</span>
+<span class="nc" id="L35">    public Department() {}</span>
 
     /**
      * Convenience constructor to create Department object quickly.
      * @param departmentId   unique department id (primary key)
      * @param departmentName department name
      */
-<span class="fc" id="L42">    public Department(String departmentId, String departmentName) {</span>
-<span class="fc" id="L43">        this.departmentId = departmentId;</span>
-<span class="fc" id="L44">        this.departmentName = departmentName;</span>
-<span class="fc" id="L45">    }</span>
+<span class="nc" id="L42">    public Department(String departmentId, String departmentName) {</span>
+<span class="nc" id="L43">        this.departmentId = departmentId;</span>
+<span class="nc" id="L44">        this.departmentName = departmentName;</span>
+<span class="nc" id="L45">    }</span>
 
-<span class="fc" id="L47">    public String getDepartmentId() { return departmentId; }</span>
-<span class="fc" id="L48">    public void setDepartmentId(String departmentId) { this.departmentId = departmentId; }</span>
+<span class="nc" id="L47">    public String getDepartmentId() { return departmentId; }</span>
+<span class="nc" id="L48">    public void setDepartmentId(String departmentId) { this.departmentId = departmentId; }</span>
 
-<span class="fc" id="L50">    public String getDepartmentName() { return departmentName; }</span>
-<span class="fc" id="L51">    public void setDepartmentName(String departmentName) { this.departmentName = departmentName; }</span>
+<span class="nc" id="L50">    public String getDepartmentName() { return departmentName; }</span>
+<span class="nc" id="L51">    public void setDepartmentName(String departmentName) { this.departmentName = departmentName; }</span>
 
-<span class="fc" id="L53">    public Set&lt;Student&gt; getStudents() { return students; }</span>
-<span class="fc" id="L54">    public void setStudents(Set&lt;Student&gt; students) { this.students = students; }</span>
+<span class="nc" id="L53">    public Set&lt;Student&gt; getStudents() { return students; }</span>
+<span class="nc" id="L54">    public void setStudents(Set&lt;Student&gt; students) { this.students = students; }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>
