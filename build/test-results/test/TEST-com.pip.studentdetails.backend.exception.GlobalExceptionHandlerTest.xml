@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.pip.studentdetails.backend.exception.GlobalExceptionHandlerTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-02-23T05:41:11" hostname="BDC6-L-141HVWQ" time="0.078">
+  <properties/>
+  <testcase name="handleJsonProcessingException_ShouldReturnInternalServerError()" classname="com.pip.studentdetails.backend.exception.GlobalExceptionHandlerTest" time="0.002"/>
+  <testcase name="handleConstraintViolationException_ShouldReturnBadRequest()" classname="com.pip.studentdetails.backend.exception.GlobalExceptionHandlerTest" time="0.001"/>
+  <testcase name="handleMethodArgumentViolation_ShouldReturnBadRequest()" classname="com.pip.studentdetails.backend.exception.GlobalExceptionHandlerTest" time="0.065"/>
+  <testcase name="handleStudentExists_ShouldReturns409WithMessage()" classname="com.pip.studentdetails.backend.exception.GlobalExceptionHandlerTest" time="0.007"/>
+  <testcase name="handleRuntimeException_ShouldReturnInternalServerError()" classname="com.pip.studentdetails.backend.exception.GlobalExceptionHandlerTest" time="0.0"/>
+  <testcase name="handleDataIntegrityViolation_ShouldReturnBadRequest()" classname="com.pip.studentdetails.backend.exception.GlobalExceptionHandlerTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

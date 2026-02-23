@@ -1,5 +1,7 @@
 package com.pip.studentdetails.backend.service;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonMappingException;
 import com.pip.studentdetails.backend.exception.StudentAlreadyExistsException;
 import com.pip.studentdetails.backend.repository.StudentDetailsRepository;
 import com.pip.studentdetails.backend.repository.StudentRepository;
@@ -11,6 +13,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.io.IOException;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -72,6 +75,33 @@ class StudentBackendServiceImplTest {
                 () -> studentBackendServiceImpl.createStudentDetails(null),
                 "Passing null to createStudentDetails should throw NullPointerException"
         );
+    }
+
+    @Test
+    void getDepartmentTopperDetails_success() {
+        String departmentId="DEPT_CS";
+        List<Object[]> rows = List.of(
+                new Object[]{"ST_001", "John", "SEM_1", "SUB_001", 100, "Computer Science and Engineering"},
+                new Object[]{"ST_002", "sankar", "SEM_1", "SUB_001", 89, "Computer Science and Engineering"}
+        );
+        when(studentRepository.fetchStudentMarksForTopper(departmentId))
+                .thenReturn(rows);
+
+        String result=studentBackendServiceImpl.getDepartmentTopperDetails(departmentId);
+        assertNotNull(result, "JSON result should not be null");
+        assertTrue(result.contains("John"),  "Topper should be John");
+
+        verify(studentRepository).fetchStudentMarksForTopper(departmentId);
+    }
+
+    @Test
+    void getDepartmentTopperDetails_JsonProcessingException() {
+        String departmentId="DEPT_CS";
+        when(studentRepository.fetchStudentMarksForTopper(any()))
+                .thenThrow(new RuntimeException("Exception Occurred while processing"));
+        RuntimeException runtimeException = assertThrows(RuntimeException.class, () ->
+                studentBackendServiceImpl.getDepartmentTopperDetails(departmentId));
+        assertEquals("Exception Occurred while processing", runtimeException.getMessage());
     }
 
     @Test
